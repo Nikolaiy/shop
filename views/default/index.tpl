@@ -1,9 +1,32 @@
 <html>
     <head>
         <title>{$pageTitle}</title>
+        <link rel="stylesheet" href="{$templateWebPath}css/main.css" type="text/css">
     </head>
 <body>
-{$pageTitle}
+    <div id="header">
+        <h1>my shop - интернет магазин</h1>
+    </div>
+
+    <div id="leftColumn">
+
+        <div id="leftMenu">
+            <div class="menuCaption">Меню:</div>
+                 пункт1<br />
+                 пункт2<br />
+                 пункт3<br />
+        </div>
+
+    </div>
+
+    <div id="centerColumn">
+        centerColumn
+    </div>
+
+    <div id="footer">
+        Footer
+    </div>
+
 </body>
 
 </html>
