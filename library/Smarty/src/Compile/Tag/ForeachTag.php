@@ -274,7 +274,7 @@ class ForeachTag extends ForeachSection {
 	}
 
 	/**
-	 * Compiles code for to restore saved template variables
+	 * Compiles code for to restore saved templates variables
 	 *
 	 * @param int $levels number of levels to restore
 	 *

@@ -17,10 +17,10 @@ class InheritanceRuntime {
 	/**
 	 * State machine
 	 * - 0 idle next extends will create a new inheritance tree
-	 * - 1 processing child template
-	 * - 2 wait for next inheritance template
-	 * - 3 assume parent template, if child will loaded goto state 1
-	 *     a call to a sub template resets the state to 0
+	 * - 1 processing child templates
+	 * - 2 wait for next inheritance templates
+	 * - 3 assume parent templates, if child will loaded goto state 1
+	 *     a call to a sub templates resets the state to 0
 	 *
 	 * @var int
 	 */
@@ -34,21 +34,21 @@ class InheritanceRuntime {
 	private $childRoot = [];
 
 	/**
-	 * inheritance template nesting level
+	 * inheritance templates nesting level
 	 *
 	 * @var int
 	 */
 	private $inheritanceLevel = 0;
 
 	/**
-	 * inheritance template index
+	 * inheritance templates index
 	 *
 	 * @var int
 	 */
 	private $tplIndex = -1;
 
 	/**
-	 * Array of template source objects
+	 * Array of templates source objects
 	 *
 	 * @var Source[]
 	 */
@@ -64,12 +64,12 @@ class InheritanceRuntime {
 	/**
 	 * Initialize inheritance
 	 *
-	 * @param \Smarty\Template $tpl template object of caller
-	 * @param bool $initChild if true init for child template
+	 * @param \Smarty\Template $tpl templates object of caller
+	 * @param bool $initChild if true init for child templates
 	 * @param array $blockNames outer level block name
 	 */
 	public function init(Template $tpl, $initChild, $blockNames = []) {
-		// if called while executing parent template it must be a sub-template with new inheritance root
+		// if called while executing parent templates it must be a sub-templates with new inheritance root
 		if ($initChild && $this->state === 3 && (strpos($tpl->template_resource, 'extendsall') === false)) {
 			$tpl->setInheritance(clone $tpl->getSmarty()->getRuntime('Inheritance'));
 			$tpl->getInheritance()->init($tpl, $initChild, $blockNames);
@@ -77,7 +77,7 @@ class InheritanceRuntime {
 		}
 		++$this->tplIndex;
 		$this->sources[$this->tplIndex] = $tpl->getSource();
-		// start of child sub template(s)
+		// start of child sub templates(s)
 		if ($initChild) {
 			$this->state = 1;
 			if (!$this->inheritanceLevel) {
@@ -93,11 +93,11 @@ class InheritanceRuntime {
 	}
 
 	/**
-	 * End of child template(s)
-	 * - if outer level is reached flush output buffer and switch to wait for parent template state
+	 * End of child templates(s)
+	 * - if outer level is reached flush output buffer and switch to wait for parent templates state
 	 *
 	 * @param \Smarty\Template $tpl
-	 * @param null|string $template optional name of inheritance parent template
+	 * @param null|string $template optional name of inheritance parent templates
 	 *
 	 * @throws \Exception
 	 * @throws \Smarty\Exception
@@ -124,7 +124,7 @@ class InheritanceRuntime {
 
 	/**
 	 * \Smarty\Runtime\Block constructor.
-	 * - if outer level {block} of child template ($state === 1) save it as child root block
+	 * - if outer level {block} of child templates ($state === 1) save it as child root block
 	 * - otherwise process inheritance and render
 	 *
 	 * @param \Smarty\Template $tpl
@@ -143,7 +143,7 @@ class InheritanceRuntime {
 			$this->childRoot[$name] = $block;
 			return;
 		}
-		// make sure we got child block of child template of current block
+		// make sure we got child block of child templates of current block
 		while ($block->child && $block->child->child && $block->tplIndex <= $block->child->tplIndex) {
 			$block->child = $block->child->child;
 		}
@@ -223,7 +223,7 @@ class InheritanceRuntime {
 		if (isset($block->parent)) {
 			$this->callBlock($block->parent, $tpl);
 		} else {
-			throw new Exception("inheritance: illegal '{\$smarty.block.parent}' used in child template '" .
+			throw new Exception("inheritance: illegal '{\$smarty.block.parent}' used in child templates '" .
 				"{$tpl->getInheritance()->sources[$block->tplIndex]->getResourceName()}' block '{$block->name}'");
 		}
 	}

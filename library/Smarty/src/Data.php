@@ -4,7 +4,7 @@ namespace Smarty;
 
 /**
  * Smarty Internal Plugin Data
- * This file contains the basic properties and methods for holding config and template variables
+ * This file contains the basic properties and methods for holding config and templates variables
  */
 class Data
 {
@@ -27,7 +27,7 @@ class Data
 	protected $smarty = null;
 
     /**
-     * template variables
+     * templates variables
      *
      * @var Variable[]
      */
@@ -48,7 +48,7 @@ class Data
     public $config_vars = array();
 
 	/**
-	 * This variable will hold a stack of template variables.
+	 * This variable will hold a stack of templates variables.
 	 *
 	 * @var null|array
 	 */
@@ -70,7 +70,7 @@ class Data
 	/**
 	 * create Smarty data object
 	 *
-	 * @param Smarty|array $_parent parent template
+	 * @param Smarty|array $_parent parent templates
 	 * @param Smarty|Template $smarty global smarty instance
 	 * @param string $name optional data block name
 	 *
@@ -88,14 +88,14 @@ class Data
 				$this->assign($_key, $_val);
 			}
 		} elseif ($_parent !== null) {
-			throw new Exception('Wrong type for template variables');
+			throw new Exception('Wrong type for templates variables');
 		}
 	}
 
 	/**
 	 * assigns a Smarty variable
 	 *
-	 * @param array|string $tpl_var the template variable name(s)
+	 * @param array|string $tpl_var the templates variable name(s)
 	 * @param mixed $value the value to assign
 	 * @param boolean $nocache if true any output of this variable will be not cached
 	 * @param int $scope one of self::SCOPE_* constants
@@ -154,9 +154,9 @@ class Data
     }
 
     /**
-     * appends values to template variables
+     * appends values to templates variables
      *
-     * @param array|string $tpl_var the template variable name(s)
+     * @param array|string $tpl_var the templates variable name(s)
      * @param mixed        $value   the value to append
      * @param bool         $merge   flag if array elements shall be merged
      * @param bool         $nocache if true any output of this variable will
@@ -209,7 +209,7 @@ class Data
     }
 
     /**
-     * Returns a single or all template variables
+     * Returns a single or all templates variables
      *
      * @param string                                                  $varName       variable name or null
      * @param bool $searchParents include parent templates?
@@ -307,7 +307,7 @@ class Data
 	}
 
 	/**
-	 * load config variables into template object
+	 * load config variables into templates object
 	 *
 	 * @param array $new_config_vars
 	 */
@@ -346,9 +346,9 @@ class Data
     }
 
 	/**
-	 * clear the given assigned template variable(s).
+	 * clear the given assigned templates variable(s).
 	 *
-	 * @param string|array $tpl_var the template variable(s) to clear
+	 * @param string|array $tpl_var the templates variable(s) to clear
 	 *
 	 * @return Data
 	 *
@@ -367,7 +367,7 @@ class Data
 	}
 
 	/**
-	 * clear all the assigned template variables.
+	 * clear all the assigned templates variables.
 	 *
 	 * @return Data
 	 *
@@ -472,7 +472,7 @@ class Data
 	}
 
 	/**
-	 * Sets the default scope for new variables assigned in this template.
+	 * Sets the default scope for new variables assigned in this templates.
 	 * @param int $scope
 	 *
 	 * @return void
@@ -482,7 +482,7 @@ class Data
 	}
 
 	/**
-	 * Returns the default scope for new variables assigned in this template.
+	 * Returns the default scope for new variables assigned in this templates.
 	 * @return int
 	 */
 	public function getDefaultScope(): int {

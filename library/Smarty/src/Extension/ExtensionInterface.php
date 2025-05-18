@@ -66,7 +66,7 @@ interface ExtensionInterface {
 
 	/**
 	 * Return a list of postfilters that will all be applied, in sequence.
-	 * Template postfilters can be used to process compiled template code (so, after the compilation).
+	 * Template postfilters can be used to process compiled templates code (so, after the compilation).
 	 *
 	 * @return \Smarty\Filter\FilterInterface[]
 	 */
@@ -74,7 +74,7 @@ interface ExtensionInterface {
 
 	/**
 	 * Return a list of outputfilters that will all be applied, in sequence.
-	 * Template outputfilters can be used to change template output just before it is rendered.
+	 * Template outputfilters can be used to change templates output just before it is rendered.
 	 *
 	 * @return \Smarty\Filter\FilterInterface[]
 	 */

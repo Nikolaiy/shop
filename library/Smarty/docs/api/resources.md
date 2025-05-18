@@ -49,7 +49,7 @@ The bracket-syntax can be used as follows:
 ```php
 <?php
 
-// setup template directories
+// setup templates directories
 $smarty->setTemplateDir([
     './templates',            // element: 0, index: 0
     './templates_2',          // element: 1, index: 1
@@ -58,7 +58,7 @@ $smarty->setTemplateDir([
 ]);
 
 /*
-  assume the template structure
+  assume the templates structure
   ./templates/foo.tpl
   ./templates_2/foo.tpl
   ./templates_2/bar.tpl
@@ -157,8 +157,8 @@ public function handleMissingTemplate($type, $name, &$content, &$modified, Smart
         // return corrected filepath
         return "/tmp/some/foobar.tpl";
     } elseif (/* ... */) {
-        // return a template directly
-        $content = "the template source";
+        // return a templates directly
+        $content = "the templates source";
         $modified = time();
         return true;
     } else {
@@ -251,7 +251,7 @@ Example:
 <?php
 $smarty->display('extends:parent.tpl|child.tpl|grandchild.tpl'); 
 
-// inheritance from multiple template sources
+// inheritance from multiple templates sources
 $smarty->display('extends:db:parent.tpl|file:child.tpl|grandchild.tpl|eval:{block name="fooBazVar_"}hello world{/block}'); 
 ```
 
@@ -284,7 +284,7 @@ For example:
 class HelloWorldResource extends Smarty\Resource\CustomPlugin {
 
     protected function fetch($name, &$source, &$mtime) {
-        $source = '{$x="hello world"}{$x}'; // load your template here based on $name
+        $source = '{$x="hello world"}{$x}'; // load your templates here based on $name
         $mtime = time();
     }
 

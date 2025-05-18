@@ -176,7 +176,7 @@ looping over a PHP iterator instead of an array().
 
   // setting PDO to use buffered queries in mysql is 
   // important if you plan on using multiple result cursors 
-  // in the template. 
+  // in the templates. 
 
   $db = new PDO($dsn, $login, $passwd, array( 
      PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true)); 

@@ -22,7 +22,7 @@ use Smarty\Template;
  *
  * @param array                    $params   parameters
  * @param string                   $content  contents of the block
- * @param Template $template template object
+ * @param Template $templates templates object
  * @param boolean                  &$repeat  repeat flag
  *
  * @return string content re-formatted

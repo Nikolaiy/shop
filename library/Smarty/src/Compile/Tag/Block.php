@@ -64,7 +64,7 @@ class Block extends Inheritance {
 			$compiler->_cache['blockNesting'] = 0;
 		}
 		if ($compiler->_cache['blockNesting'] === 0) {
-			// make sure that inheritance gets initialized in template code
+			// make sure that inheritance gets initialized in templates code
 			$this->registerInit($compiler);
 			$this->option_flags = ['hide', 'nocache', 'append', 'prepend'];
 		} else {

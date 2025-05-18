@@ -91,17 +91,17 @@ abstract class BasePlugin
             }
             return $smarty->_resource_handlers[ $type ] = new StreamPlugin();
         }
-        // TODO: try default_(template|config)_handler
+        // TODO: try default_(templates|config)_handler
         // give up
         throw new \Smarty\Exception("Unknown resource type '{$type}'");
     }
 
     /**
-     * Load template's source into current template object
+     * Load templates's source into current templates object
      *
      * @param Source $source source object
      *
-     * @return string                 template source
+     * @return string                 templates source
      * @throws \Smarty\Exception        if source cannot be loaded
      */
     abstract public function getContent(Source $source);
@@ -110,7 +110,7 @@ abstract class BasePlugin
 	 * populate Source Object with metadata from Resource
 	 *
 	 * @param Source $source source object
-	 * @param Template|null $_template template object
+	 * @param Template|null $_template templates object
 	 */
     abstract public function populate(Source $source, ?\Smarty\Template $_template = null);
 

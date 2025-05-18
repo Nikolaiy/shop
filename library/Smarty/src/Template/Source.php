@@ -63,7 +63,7 @@ class Source {
 	public $basename = null;
 
 	/**
-	 * The Components an extended template is made of
+	 * The Components an extended templates is made of
 	 *
 	 * @var \Smarty\Template\Source[]
 	 */
@@ -126,7 +126,7 @@ class Source {
 	 * initialize Source Object for given resource
 	 * Either [$_template] or [$smarty, $template_resource] must be specified
 	 *
-	 * @param Template|null $_template template object
+	 * @param Template|null $_template templates object
 	 * @param Smarty|null $smarty smarty object
 	 * @param null $template_resource resource identifier
 	 *
@@ -197,7 +197,7 @@ class Source {
 	}
 
 	/**
-	 * get default content from template or config resource handler
+	 * get default content from templates or config resource handler
 	 *
 	 * @throws \Smarty\Exception
 	 */
@@ -227,7 +227,7 @@ class Source {
 		} else {
 			$this->exists = false;
 			throw new Exception(
-				'Default handler: No ' . ($this->isConfig ? 'config' : 'template') .
+				'Default handler: No ' . ($this->isConfig ? 'config' : 'templates') .
 				" default content for '{$this->type}:{$this->name}'"
 			);
 		}

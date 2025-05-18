@@ -4,7 +4,7 @@ namespace Smarty\ParseTree;
 
 /**
  * Smarty Internal Plugin Templateparser Parse Tree
- * These are classes to build parse tree in the template parser
+ * These are classes to build parse tree in the templates parser
  *
 
 
@@ -57,7 +57,7 @@ class Tag extends Base
      *
      * @param \Smarty\Parser\TemplateParser $parser
      *
-     * @return string template code
+     * @return string templates code
      */
     public function assign_to_var(\Smarty\Parser\TemplateParser $parser)
     {

@@ -33,13 +33,13 @@ templates.
 use Smarty\Smarty;
 $smarty = new Smarty;
 
-// create template object with its private variable scope
+// create templates object with its private variable scope
 $tpl = $smarty->createTemplate('index.tpl');
 
-// assign a variable (available only to this template)
+// assign a variable (available only to this templates)
 $tpl->assign('title', 'My Homepage!');
 
-// display the template
+// display the templates
 $tpl->display();
 ```
 

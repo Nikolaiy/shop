@@ -26,7 +26,7 @@ abstract class Custom extends Base
      * fetch cached content and its modification time from data source
      *
      * @param string  $id         unique cache content identifier
-     * @param string  $name       template name
+     * @param string  $name       templates name
      * @param string  $cache_id   cache id
      * @param string  $compile_id compile id
      * @param string  $content    cached content
@@ -42,11 +42,11 @@ abstract class Custom extends Base
      *  Only implement it if modification times can be accessed faster than loading the complete cached content.}}
      *
      * @param string $id         unique cache content identifier
-     * @param string $name       template name
+     * @param string $name       templates name
      * @param string $cache_id   cache id
      * @param string $compile_id compile id
      *
-     * @return integer|boolean timestamp (epoch) the template was modified, or false if not found
+     * @return integer|boolean timestamp (epoch) the templates was modified, or false if not found
      */
     protected function fetchTimestamp($id, $name, $cache_id, $compile_id)
     {
@@ -57,7 +57,7 @@ abstract class Custom extends Base
      * Save content to cache
      *
      * @param string       $id         unique cache content identifier
-     * @param string       $name       template name
+     * @param string       $name       templates name
      * @param string       $cache_id   cache id
      * @param string       $compile_id compile id
      * @param integer|null $exp_time   seconds till expiration or null
@@ -70,7 +70,7 @@ abstract class Custom extends Base
     /**
      * Delete content from cache
      *
-     * @param string|null  $name       template name
+     * @param string|null  $name       templates name
      * @param string|null  $cache_id   cache id
      * @param string|null  $compile_id compile id
      * @param integer|null $exp_time   seconds till expiration time in seconds or null
@@ -83,7 +83,7 @@ abstract class Custom extends Base
      * populate Cached Object with metadata from Resource
      *
      * @param \Smarty\Template\Cached   $cached    cached object
-     * @param Template $_template template object
+     * @param Template $_template templates object
      *
      * @return void
      */
@@ -129,9 +129,9 @@ abstract class Custom extends Base
     }
 
 	/**
-	 * Read the cached template and process the header
+	 * Read the cached templates and process the header
 	 *
-	 * @param Template $_smarty_tpl do not change variable name, is used by compiled template
+	 * @param Template $_smarty_tpl do not change variable name, is used by compiled templates
 	 * @param Cached|null $cached cached object
 	 * @param boolean $update flag if called because cache update
 	 *
@@ -166,9 +166,9 @@ abstract class Custom extends Base
     }
 
     /**
-     * Write the rendered template output to cache
+     * Write the rendered templates output to cache
      *
-     * @param Template $_template template object
+     * @param Template $_template templates object
      * @param string                   $content   content to cache
      *
      * @return boolean                  success
@@ -186,9 +186,9 @@ abstract class Custom extends Base
     }
 
     /**
-     * Read cached template from cache
+     * Read cached templates from cache
      *
-     * @param Template $_template template object
+     * @param Template $_template templates object
      *
      * @return string|boolean  content
      */
@@ -226,10 +226,10 @@ abstract class Custom extends Base
     }
 
     /**
-     * Empty cache for a specific template
+     * Empty cache for a specific templates
      *
      * @param \Smarty\Smarty  $smarty        Smarty object
-     * @param string  $resource_name template name
+     * @param string  $resource_name templates name
      * @param string  $cache_id      cache id
      * @param string  $compile_id    compile id
      * @param integer $exp_time      expiration time (number of seconds, not timestamp)
@@ -252,7 +252,7 @@ abstract class Custom extends Base
     }
 
 	/**
-	 * Check is cache is locked for this template
+	 * Check is cache is locked for this templates
 	 *
 	 * @param Smarty $smarty Smarty object
 	 * @param Cached $cached cached object
@@ -271,7 +271,7 @@ abstract class Custom extends Base
     }
 
     /**
-     * Lock cache for this template
+     * Lock cache for this templates
      *
      * @param \Smarty\Smarty                 $smarty Smarty object
      * @param \Smarty\Template\Cached $cached cached object
@@ -287,7 +287,7 @@ abstract class Custom extends Base
     }
 
     /**
-     * Unlock cache for this template
+     * Unlock cache for this templates
      *
      * @param \Smarty\Smarty                 $smarty Smarty object
      * @param \Smarty\Template\Cached $cached cached object

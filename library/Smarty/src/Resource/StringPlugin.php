@@ -15,7 +15,7 @@ use Smarty\Template\Source;
 
 /**
  * Smarty Internal Plugin Resource String
- * Implements the strings as resource for Smarty template
+ * Implements the strings as resource for Smarty templates
  * {@internal unlike eval-resources the compiled state of string-resources is saved for subsequent access}}
  *
 
@@ -27,7 +27,7 @@ class StringPlugin extends BasePlugin {
 	 * populate Source Object with metadata from Resource
 	 *
 	 * @param Source $source source object
-	 * @param Template $_template template object
+	 * @param Template $_template templates object
 	 *
 	 * @return void
 	 */
@@ -37,11 +37,11 @@ class StringPlugin extends BasePlugin {
 	}
 
 	/**
-	 * Load template's source from $resource_name into current template object
+	 * Load templates's source from $resource_name into current templates object
 	 *
 	 * @param Source $source source object
 	 *
-	 * @return string                 template source
+	 * @return string                 templates source
 	 * @uses decode() to decode base64 and urlencoded template_resources
 	 *
 	 */

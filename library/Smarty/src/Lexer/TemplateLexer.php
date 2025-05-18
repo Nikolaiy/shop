@@ -13,7 +13,7 @@ namespace Smarty\Lexer;
 
 /**
  * TemplateLexer
- * This is the template file lexer.
+ * This is the templates file lexer.
  * It is generated from the TemplateLexer.plex file
  *
  *
@@ -221,7 +221,7 @@ class TemplateLexer
     /**
      * constructor
      *
-     * @param   string                             $source template source
+     * @param   string                             $source templates source
      * @param \Smarty\Compiler\Template $compiler
      */
     public function __construct($source, \Smarty\Compiler\Template $compiler)

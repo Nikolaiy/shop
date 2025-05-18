@@ -18,7 +18,7 @@ abstract class Base
      * populate Cached Object with metadata from Resource
      *
      * @param Cached  $cached    cached object
-     * @param Template $_template template object
+     * @param Template $_template templates object
      *
      * @return void
      */
@@ -34,9 +34,9 @@ abstract class Base
     abstract public function populateTimestamp(Cached $cached);
 
 	/**
-	 * Read the cached template and process header
+	 * Read the cached templates and process header
 	 *
-	 * @param Template $_template template object
+	 * @param Template $_template templates object
 	 * @param Cached|null $cached cached object
 	 * @param boolean $update flag if called because cache update
 	 *
@@ -49,9 +49,9 @@ abstract class Base
     );
 
     /**
-     * Write the rendered template output to cache
+     * Write the rendered templates output to cache
      *
-     * @param Template $_template template object
+     * @param Template $_template templates object
      * @param string                   $content   content to cache
      *
      * @return boolean success
@@ -59,9 +59,9 @@ abstract class Base
     abstract public function storeCachedContent(Template $_template, $content);
 
     /**
-     * Read cached template from cache
+     * Read cached templates from cache
      *
-     * @param Template $_template template object
+     * @param Template $_template templates object
      *
      * @return string  content
      */
@@ -78,10 +78,10 @@ abstract class Base
     abstract public function clearAll(Smarty $smarty, $exp_time = null);
 
     /**
-     * Empty cache for a specific template
+     * Empty cache for a specific templates
      *
      * @param Smarty  $smarty        Smarty object
-     * @param string  $resource_name template name
+     * @param string  $resource_name templates name
      * @param string  $cache_id      cache id
      * @param string  $compile_id    compile id
      * @param integer $exp_time      expiration time (number of seconds, not timestamp)
@@ -113,7 +113,7 @@ abstract class Base
     }
 
     /**
-     * Check is cache is locked for this template
+     * Check is cache is locked for this templates
      *
      * @param Smarty                 $smarty
      * @param Cached $cached
@@ -127,7 +127,7 @@ abstract class Base
     }
 
     /**
-     * Lock cache for this template
+     * Lock cache for this templates
      *
      * @param Smarty                 $smarty
      * @param Cached $cached
@@ -141,7 +141,7 @@ abstract class Base
     }
 
     /**
-     * Unlock cache for this template
+     * Unlock cache for this templates
      *
      * @param Smarty                 $smarty
      * @param Cached $cached

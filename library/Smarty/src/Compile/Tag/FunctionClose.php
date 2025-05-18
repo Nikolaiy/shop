@@ -57,7 +57,7 @@ class FunctionClose extends Base {
 			$_paramsCode .= "\$params = array_merge($_params, \$params);\n";
 		}
 		$_functionCode = $compiler->getParser()->current_buffer;
-		// setup buffer for template function code
+		// setup buffer for templates function code
 		$compiler->getParser()->current_buffer = new \Smarty\ParseTree\Template();
 
 		$_funcName = "smarty_template_function_{$_name}_{$compiler->getTemplate()->getCompiled()->nocache_hash}";

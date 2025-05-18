@@ -62,7 +62,7 @@ class CaptureRuntime {
 	}
 
 	/**
-	 * Register callbacks in template class
+	 * Register callbacks in templates class
 	 *
 	 * @param \Smarty\Template $_template
 	 */

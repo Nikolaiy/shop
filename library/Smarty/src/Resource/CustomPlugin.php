@@ -23,22 +23,22 @@ use Smarty\Exception;
 abstract class CustomPlugin extends BasePlugin {
 
 	/**
-	 * fetch template and its modification time from data source
+	 * fetch templates and its modification time from data source
 	 *
-	 * @param string $name template name
-	 * @param string  &$source template source
-	 * @param integer &$mtime template modification timestamp (epoch)
+	 * @param string $name templates name
+	 * @param string  &$source templates source
+	 * @param integer &$mtime templates modification timestamp (epoch)
 	 */
 	abstract protected function fetch($name, &$source, &$mtime);
 
 	/**
-	 * Fetch template's modification timestamp from data source
+	 * Fetch templates's modification timestamp from data source
 	 * {@internal implementing this method is optional.
-	 *  Only implement it if modification times can be accessed faster than loading the complete template source.}}
+	 *  Only implement it if modification times can be accessed faster than loading the complete templates source.}}
 	 *
-	 * @param string $name template name
+	 * @param string $name templates name
 	 *
-	 * @return integer|boolean timestamp (epoch) the template was modified, or false if not found
+	 * @return integer|boolean timestamp (epoch) the templates was modified, or false if not found
 	 */
 	protected function fetchTimestamp($name) {
 		return null;
@@ -48,7 +48,7 @@ abstract class CustomPlugin extends BasePlugin {
 	 * populate Source Object with metadata from Resource
 	 *
 	 * @param Source $source source object
-	 * @param Template|null $_template template object
+	 * @param Template|null $_template templates object
 	 */
 	public function populate(Source $source, ?Template $_template = null) {
 		$source->uid = sha1($source->type . ':' . $source->name);
@@ -66,11 +66,11 @@ abstract class CustomPlugin extends BasePlugin {
 	}
 
 	/**
-	 * Load template's source into current template object
+	 * Load templates's source into current templates object
 	 *
 	 * @param Source $source source object
 	 *
-	 * @return string                 template source
+	 * @return string                 templates source
 	 * @throws Exception        if source cannot be loaded
 	 */
 	public function getContent(Source $source) {
@@ -78,7 +78,7 @@ abstract class CustomPlugin extends BasePlugin {
 		if (isset($content)) {
 			return $content;
 		}
-		throw new Exception("Unable to read template {$source->type} '{$source->name}'");
+		throw new Exception("Unable to read templates {$source->type} '{$source->name}'");
 	}
 
 	/**

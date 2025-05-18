@@ -21,7 +21,7 @@ use Smarty\Runtime\TplFunctionRuntime;
 
 
 /**
- * Project:     Smarty: the PHP compiling template engine
+ * Project:     Smarty: the PHP compiling templates engine
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -130,7 +130,7 @@ class Smarty extends \Smarty\TemplateBase {
 	public $_templateDirNormalized = false;
 
 	/**
-	 * joined template directory string used in cache keys
+	 * joined templates directory string used in cache keys
 	 *
 	 * @var string
 	 */
@@ -151,7 +151,7 @@ class Smarty extends \Smarty\TemplateBase {
 	public $_joined_config_dir = null;
 
 	/**
-	 * default template handler
+	 * default templates handler
 	 *
 	 * @var callable
 	 */
@@ -186,7 +186,7 @@ class Smarty extends \Smarty\TemplateBase {
 	public $_cacheDirNormalized = false;
 
 	/**
-	 * force template compiling?
+	 * force templates compiling?
 	 *
 	 * @var boolean
 	 */
@@ -214,14 +214,14 @@ class Smarty extends \Smarty\TemplateBase {
 	public $force_cache = false;
 
 	/**
-	 * template left-delimiter
+	 * templates left-delimiter
 	 *
 	 * @var string
 	 */
 	private $left_delimiter = "{";
 
 	/**
-	 * template right-delimiter
+	 * templates right-delimiter
 	 *
 	 * @var string
 	 */
@@ -253,7 +253,7 @@ class Smarty extends \Smarty\TemplateBase {
 	/**
 	 * debug mode
 	 * Setting this to true enables the debug-console. Setting it to 2 enables individual Debug Console window by
-	 * template name.
+	 * templates name.
 	 *
 	 * @var boolean|int
 	 */
@@ -280,7 +280,7 @@ class Smarty extends \Smarty\TemplateBase {
 	public $smarty_debug_id = 'SMARTY_DEBUG';
 
 	/**
-	 * Path of debug template.
+	 * Path of debug templates.
 	 *
 	 * @var string
 	 */
@@ -437,14 +437,14 @@ class Smarty extends \Smarty\TemplateBase {
 	public $_debug = null;
 
 	/**
-	 * template directory
+	 * templates directory
 	 *
 	 * @var array
 	 */
 	protected $template_dir = ['./templates/'];
 
 	/**
-	 * flags for normalized template directory entries
+	 * flags for normalized templates directory entries
 	 *
 	 * @var array
 	 */
@@ -458,7 +458,7 @@ class Smarty extends \Smarty\TemplateBase {
 	protected $config_dir = ['./configs/'];
 
 	/**
-	 * flags for normalized template directory entries
+	 * flags for normalized templates directory entries
 	 *
 	 * @var array
 	 */
@@ -562,9 +562,9 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Check if a template resource exists
+	 * Check if a templates resource exists
 	 *
-	 * @param string $resource_name template name
+	 * @param string $resource_name templates name
 	 *
 	 * @return bool status
 	 * @throws \Smarty\Exception
@@ -599,10 +599,10 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Add template directory(s)
+	 * Add templates directory(s)
 	 *
-	 * @param string|array $template_dir directory(s) of template sources
-	 * @param string $key of the array element to assign the template dir to
+	 * @param string|array $template_dir directory(s) of templates sources
+	 * @param string $key of the array element to assign the templates dir to
 	 * @param bool $isConfig true for config_dir
 	 *
 	 * @return static current Smarty instance for chaining
@@ -642,12 +642,12 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Get template directories
+	 * Get templates directories
 	 *
 	 * @param mixed $index index of directory to get, null to get all
 	 * @param bool $isConfig true for config_dir
 	 *
-	 * @return array|string list of template directories, or directory of $index
+	 * @return array|string list of templates directories, or directory of $index
 	 */
 	public function getTemplateDir($index = null, $isConfig = false) {
 		if ($isConfig) {
@@ -665,9 +665,9 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Set template directory
+	 * Set templates directory
 	 *
-	 * @param string|array $template_dir directory(s) of template sources
+	 * @param string|array $template_dir directory(s) of templates sources
 	 * @param bool $isConfig true for config_dir
 	 *
 	 * @return static current Smarty instance for chaining
@@ -685,9 +685,9 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Adds a template directory before any existing directoires
+	 * Adds a templates directory before any existing directoires
 	 *
-	 * @param string $new_template_dir directory of template sources
+	 * @param string $new_template_dir directory of templates sources
 	 * @param bool $is_config true for config_dir
 	 *
 	 * @return static current Smarty instance for chaining
@@ -737,7 +737,7 @@ class Smarty extends \Smarty\TemplateBase {
 	 * Registers plugin to be used in templates
 	 *
 	 * @param string $type plugin type
-	 * @param string $name name of template tag
+	 * @param string $name name of templates tag
 	 * @param callable $callback PHP callback to register
 	 * @param bool $cacheable if true (default) this function is cache able
 	 *
@@ -766,7 +766,7 @@ class Smarty extends \Smarty\TemplateBase {
 	 * ]
 	 *
 	 * @param string $type plugin type
-	 * @param string $name name of template tag
+	 * @param string $name name of templates tag
 	 *
 	 * @return array|null
 	 *
@@ -783,7 +783,7 @@ class Smarty extends \Smarty\TemplateBase {
 	 * Unregisters plugin previously registered using ::registerPlugin
 	 *
 	 * @param string $type plugin type
-	 * @param string $name name of template tag
+	 * @param string $name name of templates tag
 	 *
 	 * @return $this
 	 *
@@ -932,14 +932,14 @@ class Smarty extends \Smarty\TemplateBase {
 	private $templates = [];
 
 	/**
-	 * Creates a template object
+	 * Creates a templates object
 	 *
 	 * @param string $template_name
-	 * @param mixed $cache_id cache id to be used with this template
-	 * @param mixed $compile_id compile id to be used with this template
+	 * @param mixed $cache_id cache id to be used with this templates
+	 * @param mixed $compile_id compile id to be used with this templates
 	 * @param null $parent next higher level of Smarty variables
 	 *
-	 * @return Template template object
+	 * @return Template templates object
 	 * @throws Exception
 	 */
 	public function createTemplate($template_name, $cache_id = null, $compile_id = null, $parent = null): Template {
@@ -962,7 +962,7 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Get unique template id
+	 * Get unique templates id
 	 *
 	 * @param string $resource_name
 	 * @param null|mixed $cache_id
@@ -1252,9 +1252,9 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Empty cache for a specific template
+	 * Empty cache for a specific templates
 	 *
-	 * @param string $template_name template name
+	 * @param string $template_name templates name
 	 * @param string $cache_id cache id
 	 * @param string $compile_id compile id
 	 * @param integer $exp_time expiration time
@@ -1289,13 +1289,13 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Delete compiled template file
+	 * Delete compiled templates file
 	 *
-	 * @param string $resource_name template name
+	 * @param string $resource_name templates name
 	 * @param string $compile_id compile id
 	 * @param integer $exp_time expiration time
 	 *
-	 * @return int number of template files deleted
+	 * @return int number of templates files deleted
 	 * @throws \Smarty\Exception
 	 *
 	 * @api  Smarty::clearCompiledTemplate()
@@ -1395,14 +1395,14 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Compile all template files
+	 * Compile all templates files
 	 *
 	 * @param string $extension file extension
 	 * @param bool $force_compile force all to recompile
 	 * @param int $time_limit
 	 * @param int $max_errors
 	 *
-	 * @return integer number of template files recompiled
+	 * @return integer number of templates files recompiled
 	 * @api Smarty::compileAllTemplates()
 	 *
 	 */
@@ -1423,7 +1423,7 @@ class Smarty extends \Smarty\TemplateBase {
 	 * @param int $time_limit
 	 * @param int $max_errors
 	 *
-	 * @return int number of template files recompiled
+	 * @return int number of templates files recompiled
 	 * @api Smarty::compileAllConfig()
 	 *
 	 */
@@ -1437,15 +1437,15 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Compile all template or config files
+	 * Compile all templates or config files
 	 *
-	 * @param string $extension template file name extension
+	 * @param string $extension templates file name extension
 	 * @param bool $force_compile force all to recompile
 	 * @param int $time_limit set maximum execution time
 	 * @param int $max_errors set maximum allowed errors
 	 * @param bool $isConfig flag true if called for config files
 	 *
-	 * @return int number of template files compiled
+	 * @return int number of templates files compiled
 	 */
 	protected function compileAll(
 		$extension,
@@ -1610,10 +1610,10 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Run pre-filters over template source
+	 * Run pre-filters over templates source
 	 *
 	 * @param string $source the content which shall be processed by the filters
-	 * @param Template $template template object
+	 * @param Template $template templates object
 	 *
 	 * @return string                   the filtered source
 	 */
@@ -1631,10 +1631,10 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Run post-filters over template's compiled code
+	 * Run post-filters over templates's compiled code
 	 *
 	 * @param string $code the content which shall be processed by the filters
-	 * @param Template $template template object
+	 * @param Template $template templates object
 	 *
 	 * @return string                   the filtered code
 	 */
@@ -1652,10 +1652,10 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Run filters over template output
+	 * Run filters over templates output
 	 *
 	 * @param string $content the content which shall be processed by the filters
-	 * @param Template $template template object
+	 * @param Template $template templates object
 	 *
 	 * @return string                   the filtered (modified) output
 	 */
@@ -1898,7 +1898,7 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Registers a resource to fetch a template
+	 * Registers a resource to fetch a templates
 	 *
 	 * @param string $name name of resource type
 	 * @param Base $resource_handler
@@ -1920,7 +1920,7 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * Unregisters a resource to fetch a template
+	 * Unregisters a resource to fetch a templates
 	 *
 	 * @param                                                                 $name
 	 *
@@ -2107,13 +2107,13 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * fetches a rendered Smarty template
+	 * fetches a rendered Smarty templates
 	 *
-	 * @param string $template the resource handle of the template file or template object
-	 * @param mixed $cache_id cache id to be used with this template
-	 * @param mixed $compile_id compile id to be used with this template
+	 * @param string $template the resource handle of the templates file or templates object
+	 * @param mixed $cache_id cache id to be used with this templates
+	 * @param mixed $compile_id compile id to be used with this templates
 	 *
-	 * @return string rendered template output
+	 * @return string rendered templates output
 	 * @throws Exception
 	 * @throws Exception
 	 */
@@ -2122,11 +2122,11 @@ class Smarty extends \Smarty\TemplateBase {
 	}
 
 	/**
-	 * displays a Smarty template
+	 * displays a Smarty templates
 	 *
-	 * @param string $template the resource handle of the template file or template object
-	 * @param mixed $cache_id cache id to be used with this template
-	 * @param mixed $compile_id compile id to be used with this template
+	 * @param string $template the resource handle of the templates file or templates object
+	 * @param mixed $cache_id cache id to be used with this templates
+	 * @param mixed $compile_id compile id to be used with this templates
 	 *
 	 * @throws \Exception
 	 * @throws \Smarty\Exception
@@ -2194,10 +2194,10 @@ class Smarty extends \Smarty\TemplateBase {
 	/**
 	 * test if cache is valid
 	 *
-	 * @param null|string|Template $template the resource handle of the template file or template
+	 * @param null|string|Template $template the resource handle of the templates file or templates
 	 *                                                          object
-	 * @param mixed $cache_id cache id to be used with this template
-	 * @param mixed $compile_id compile id to be used with this template
+	 * @param mixed $cache_id cache id to be used with this templates
+	 * @param mixed $compile_id compile id to be used with this templates
 	 *
 	 * @return bool cache status
 	 * @throws \Exception

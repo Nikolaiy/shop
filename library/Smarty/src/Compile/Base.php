@@ -199,7 +199,7 @@ abstract class Base implements CompilerInterface {
 		static $scopes = [
 			'local'    => Data::SCOPE_LOCAL,    // current scope
 			'parent' => Data::SCOPE_PARENT,     // parent scope (definition unclear)
-			'tpl_root' => Data::SCOPE_TPL_ROOT, // highest template (keep going up until parent is not a template)
+			'tpl_root' => Data::SCOPE_TPL_ROOT, // highest templates (keep going up until parent is not a templates)
 			'root'     => Data::SCOPE_ROOT,     // highest scope (definition unclear)
 			'global' => Data::SCOPE_GLOBAL,     // smarty object
 

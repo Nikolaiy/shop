@@ -34,7 +34,7 @@ class TestInstall
         if ($errors === null) {
             echo "<PRE>\n";
             echo "Smarty Installation test...\n";
-            echo "Testing template directory...\n";
+            echo "Testing templates directory...\n";
         }
         $_stream_resolve_include_path = function_exists('stream_resolve_include_path');
         // test if all registered template_dir are accessible

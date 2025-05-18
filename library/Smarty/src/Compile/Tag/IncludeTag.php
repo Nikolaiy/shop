@@ -92,7 +92,7 @@ class IncludeTag extends Base {
 						if ("{$compiler->getTemplate()->getSource()->type}:{$compiler->getTemplate()->getSource()->name}" ==
 							$fullResourceName
 						) {
-							// recursive call of current template
+							// recursive call of current templates
 							$compiled->includes[$fullResourceName] = 2;
 						} else {
 							$compiled->includes[$fullResourceName] = 1;

@@ -50,7 +50,7 @@ The defaults can be changed as follows:
 <?php
 use Smarty\Smarty;
 $smarty = new Smarty();
-$smarty->setTemplateDir('/some/template/dir');
+$smarty->setTemplateDir('/some/templates/dir');
 $smarty->setConfigDir('/some/config/dir');
 $smarty->setCompileDir('/some/compile/dir');
 $smarty->setCacheDir('/some/cache/dir');
@@ -80,7 +80,7 @@ You can verify if your system has the correct access rights for
 <?php
 use Smarty\Smarty;
 $smarty = new Smarty();
-$smarty->setTemplateDir('/some/template/dir');
+$smarty->setTemplateDir('/some/templates/dir');
 $smarty->setConfigDir('/some/config/dir');
 $smarty->setCompileDir('/some/compile/dir');
 $smarty->setCacheDir('/some/cache/dir');

@@ -15,7 +15,7 @@ use Smarty\Smarty;
 
 /**
  * Smarty Internal Plugin Resource Eval
- * Implements the strings as resource for Smarty template
+ * Implements the strings as resource for Smarty templates
  * {@internal unlike string-resources the compiled state of eval-resources is NOT saved for subsequent access}}
  *
 
@@ -27,7 +27,7 @@ class StringEval extends RecompiledPlugin
      * populate Source Object with meta data from Resource
      *
      * @param \Smarty\Template\Source   $source    source object
-     * @param \Smarty\Template $_template template object
+     * @param \Smarty\Template $_template templates object
      *
      * @return void
      */
@@ -38,11 +38,11 @@ class StringEval extends RecompiledPlugin
     }
 
     /**
-     * Load template's source from $resource_name into current template object
+     * Load templates's source from $resource_name into current templates object
      *
      * @param \Smarty\Template\Source $source source object
      *
-     * @return string                 template source
+     * @return string                 templates source
      *@uses decode() to decode base64 and urlencoded template_resources
      *
      */

@@ -25,7 +25,7 @@ use Smarty\Template;
  * @version 1.0
  *
  * @param array                    $params   parameters
- * @param Template $template template object
+ * @param Template $templates templates object
  *
  * @throws Exception
  * @return string

@@ -1,7 +1,7 @@
 <?php
 /**
  * Smarty Internal Plugin Smarty Template  Base
- * This file contains the basic shared methods for template handling
+ * This file contains the basic shared methods for templates handling
  *
 
 
@@ -11,7 +11,7 @@
 namespace Smarty;
 
 /**
- * Class with shared smarty/template methods
+ * Class with shared smarty/templates methods
  */
 abstract class TemplateBase extends Data {
 
@@ -39,7 +39,7 @@ abstract class TemplateBase extends Data {
 	public $caching = \Smarty\Smarty::CACHING_OFF;
 
 	/**
-	 * check template for modifications?
+	 * check templates for modifications?
 	 *
 	 * @var int
 	 */
@@ -53,7 +53,7 @@ abstract class TemplateBase extends Data {
 	public $cache_lifetime = 3600;
 
 	/**
-	 * Array of source information for known template functions
+	 * Array of source information for known templates functions
 	 *
 	 * @var array
 	 */
@@ -190,7 +190,7 @@ abstract class TemplateBase extends Data {
 	}
 
 	/**
-	 * return name of debugging template
+	 * return name of debugging templates
 	 *
 	 * @return string
 	 * @api Smarty::getDebugTemplate()
@@ -321,7 +321,7 @@ abstract class TemplateBase extends Data {
 		$smarty = $this->getSmarty();
 		// test if exists
 		if (!class_exists($class_impl)) {
-			throw new Exception("Undefined class '$class_impl' in register template class");
+			throw new Exception("Undefined class '$class_impl' in register templates class");
 		}
 		// register the class
 		$smarty->registered_classes[$class_name] = $class_impl;
@@ -349,7 +349,7 @@ abstract class TemplateBase extends Data {
 	}
 
 	/**
-	 * Register template default handler
+	 * Register templates default handler
 	 *
 	 * @param callable $callback class/method name
 	 *
@@ -363,13 +363,13 @@ abstract class TemplateBase extends Data {
 		if (is_callable($callback)) {
 			$smarty->default_template_handler_func = $callback;
 		} else {
-			throw new Exception('Default template handler not callable');
+			throw new Exception('Default templates handler not callable');
 		}
 		return $this;
 	}
 
 	/**
-	 * Registers a resource to fetch a template
+	 * Registers a resource to fetch a templates
 	 *
 	 * @param string $name name of resource type
 	 * @param \Smarty\Resource\BasePlugin $resource_handler instance of Smarty\Resource\BasePlugin
@@ -385,7 +385,7 @@ abstract class TemplateBase extends Data {
 	}
 
 	/**
-	 * Unregisters a resource to fetch a template
+	 * Unregisters a resource to fetch a templates
 	 *
 	 * @param string $type name of resource type
 	 *
@@ -402,7 +402,7 @@ abstract class TemplateBase extends Data {
 	}
 
 	/**
-	 * set the debug template
+	 * set the debug templates
 	 *
 	 * @param string $tpl_name
 	 *

@@ -15,10 +15,10 @@ use Smarty\TemplateBase;
 class TplFunctionRuntime {
 
 	/**
-	 * Call template function
+	 * Call templates function
 	 *
-	 * @param \Smarty\Template $tpl template object
-	 * @param string $name template function name
+	 * @param \Smarty\Template $tpl templates object
+	 * @param string $name templates function name
 	 * @param array $params parameter array
 	 * @param bool $nocache true if called nocache
 	 *
@@ -27,7 +27,7 @@ class TplFunctionRuntime {
 	public function callTemplateFunction(Template $tpl, $name, $params, $nocache) {
 		$funcParam = $tpl->tplFunctions[$name] ?? ($tpl->getSmarty()->tplFunctions[$name] ?? null);
 		if (!isset($funcParam)) {
-			throw new \Smarty\Exception("Unable to find template function '{$name}'");
+			throw new \Smarty\Exception("Unable to find templates function '{$name}'");
 		}
 
 		if (!$tpl->caching || ($tpl->caching && $nocache)) {
@@ -40,7 +40,7 @@ class TplFunctionRuntime {
 			}
 		}
 		if (!function_exists($function) && !$this->addTplFuncToCache($tpl, $name, $function)) {
-			throw new \Smarty\Exception("Unable to find template function '{$name}'");
+			throw new \Smarty\Exception("Unable to find templates function '{$name}'");
 		}
 
 		$tpl->pushStack();
@@ -49,19 +49,19 @@ class TplFunctionRuntime {
 	}
 
 	/**
-	 * Register template functions defined by template
+	 * Register templates functions defined by templates
 	 *
 	 * @param \Smarty|\Smarty\Template|\Smarty\TemplateBase $obj
 	 * @param array $tplFunctions source information array of
-	 *                                                                                      template functions defined
-	 *                                                                                      in template
+	 *                                                                                      templates functions defined
+	 *                                                                                      in templates
 	 * @param bool $override if true replace existing
 	 *                                                                                      functions with same name
 	 */
 	public function registerTplFunctions(TemplateBase $obj, $tplFunctions, $override = true) {
 		$obj->tplFunctions =
 			$override ? array_merge($obj->tplFunctions, $tplFunctions) : array_merge($tplFunctions, $obj->tplFunctions);
-		// make sure that the template functions are known in parent templates
+		// make sure that the templates functions are known in parent templates
 		if ($obj->_isSubTpl()) {
 			$this->registerTplFunctions($obj->parent, $tplFunctions, false);
 		} else {
@@ -71,10 +71,10 @@ class TplFunctionRuntime {
 	}
 
 	/**
-	 * Return source parameter array for single or all template functions
+	 * Return source parameter array for single or all templates functions
 	 *
-	 * @param \Smarty\Template $tpl template object
-	 * @param null|string $name template function name
+	 * @param \Smarty\Template $tpl templates object
+	 * @param null|string $name templates function name
 	 *
 	 * @return array|bool|mixed
 	 */
@@ -87,10 +87,10 @@ class TplFunctionRuntime {
 	}
 
 	/**
-	 * Add template function to cache file for nocache calls
+	 * Add templates function to cache file for nocache calls
 	 *
 	 * @param Template $tpl
-	 * @param string $_name template function name
+	 * @param string $_name templates function name
 	 * @param string $_function PHP function name
 	 *
 	 * @return bool
@@ -101,7 +101,7 @@ class TplFunctionRuntime {
 		if (is_file($funcParam['compiled_filepath'])) {
 			// read compiled file
 			$code = file_get_contents($funcParam['compiled_filepath']);
-			// grab template function
+			// grab templates function
 			if (preg_match("/\/\* {$_function} \*\/([\S\s]*?)\/\*\/ {$_function} \*\//", $code, $match)) {
 				// grab source info from file dependency
 				preg_match("/\s*'{$funcParam['uid']}'([\S\s]*?)\),/", $code, $match1);
@@ -111,10 +111,10 @@ class TplFunctionRuntime {
 				if (function_exists($_function)) {
 
 					// Some magic code existed here, testing if the cached property had been set
-					// and then bubbling up until it found a parent template that had the cached property.
+					// and then bubbling up until it found a parent templates that had the cached property.
 					// This is no longer possible, so somehow this might break.
 
-					// add template function code to cache file
+					// add templates function code to cache file
 					$content = $tpl->getCached()->readCache($tpl);
 					if ($content) {
 						// check if we must update file dependency

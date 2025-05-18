@@ -55,7 +55,7 @@ abstract class KeyValueStore extends Base
      * populate Cached Object with meta data from Resource
      *
      * @param Cached   $cached    cached object
-     * @param Template $_template template object
+     * @param Template $_template templates object
      *
      * @return void
      */
@@ -93,9 +93,9 @@ abstract class KeyValueStore extends Base
     }
 
 	/**
-	 * Read the cached template and process the header
+	 * Read the cached templates and process the header
 	 *
-	 * @param Template $_smarty_tpl do not change variable name, is used by compiled template
+	 * @param Template $_smarty_tpl do not change variable name, is used by compiled templates
 	 * @param Cached|null $cached cached object
 	 * @param boolean $update flag if called because cache update
 	 *
@@ -133,9 +133,9 @@ abstract class KeyValueStore extends Base
     }
 
     /**
-     * Write the rendered template output to cache
+     * Write the rendered templates output to cache
      *
-     * @param Template $_template template object
+     * @param Template $_template templates object
      * @param string                   $content   content to cache
      *
      * @return boolean                  success
@@ -147,9 +147,9 @@ abstract class KeyValueStore extends Base
     }
 
     /**
-     * Read cached template from cache
+     * Read cached templates from cache
      *
-     * @param Template $_template template object
+     * @param Template $_template templates object
      *
      * @return string|false  content
      */
@@ -197,11 +197,11 @@ abstract class KeyValueStore extends Base
     }
 
     /**
-     * Empty cache for a specific template
+     * Empty cache for a specific templates
      * {@internal the $exp_time argument is ignored altogether}}
      *
      * @param Smarty  $smarty        Smarty object
-     * @param string  $resource_name template name
+     * @param string  $resource_name templates name
      * @param string  $cache_id      cache id
      * @param string  $compile_id    compile id
      * @param integer $exp_time      expiration time [being ignored]
@@ -223,10 +223,10 @@ abstract class KeyValueStore extends Base
     }
 
     /**
-     * Get template's unique ID
+     * Get templates's unique ID
      *
      * @param Smarty $smarty        Smarty object
-     * @param string $resource_name template name
+     * @param string $resource_name templates name
      *
      * @return string filepath of cache file
      * @throws \Smarty\Exception
@@ -262,7 +262,7 @@ abstract class KeyValueStore extends Base
      * Fetch and prepare a cache object.
      *
      * @param string  $cid           CacheID to fetch
-     * @param string  $resource_name template name
+     * @param string  $resource_name templates name
      * @param string  $cache_id      cache id
      * @param string  $compile_id    compile id
      * @param string  $content       cached content
@@ -328,7 +328,7 @@ abstract class KeyValueStore extends Base
      * Invalidate CacheID
      *
      * @param string $cid           CacheID
-     * @param string $resource_name template name
+     * @param string $resource_name templates name
      * @param string $cache_id      cache id
      * @param string $compile_id    compile id
      * @param string $resource_uid  source's uid
@@ -347,7 +347,7 @@ abstract class KeyValueStore extends Base
         // invalidate everything
         if (!$resource_name && !$cache_id && !$compile_id) {
             $key = 'IVK#ALL';
-        } // invalidate all caches by template
+        } // invalidate all caches by templates
         else {
             if ($resource_name && !$cache_id && !$compile_id) {
                 $key = 'IVK#TEMPLATE#' . $resource_uid . '#' . $this->sanitize($resource_name);
@@ -373,7 +373,7 @@ abstract class KeyValueStore extends Base
      * Determine the latest timestamp known to the invalidation chain
      *
      * @param string $cid           CacheID to determine latest invalidation timestamp of
-     * @param string $resource_name template name
+     * @param string $resource_name templates name
      * @param string $cache_id      cache id
      * @param string $compile_id    compile id
      * @param string $resource_uid  source's filepath
@@ -405,7 +405,7 @@ abstract class KeyValueStore extends Base
      * Splits 'some|chain|into|an|array' into array( '#clearAll#', 'some', 'some|chain', 'some|chain|into', ... )
      *
      * @param string $cid           CacheID to translate
-     * @param string $resource_name template name
+     * @param string $resource_name templates name
      * @param string $cache_id      cache id
      * @param string $compile_id    compile id
      * @param string $resource_uid  source's filepath
@@ -457,7 +457,7 @@ abstract class KeyValueStore extends Base
     }
 
     /**
-     * Check is cache is locked for this template
+     * Check is cache is locked for this templates
      *
      * @param Smarty                 $smarty Smarty object
      * @param Cached $cached cached object
@@ -472,7 +472,7 @@ abstract class KeyValueStore extends Base
     }
 
     /**
-     * Lock cache for this template
+     * Lock cache for this templates
      *
      * @param Smarty                 $smarty Smarty object
      * @param Cached $cached cached object
@@ -487,7 +487,7 @@ abstract class KeyValueStore extends Base
     }
 
     /**
-     * Unlock cache for this template
+     * Unlock cache for this templates
      *
      * @param Smarty                 $smarty Smarty object
      * @param Cached $cached cached object

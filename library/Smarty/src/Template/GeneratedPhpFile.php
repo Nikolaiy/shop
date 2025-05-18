@@ -49,14 +49,14 @@ abstract class GeneratedPhpFile {
 	protected $processed = false;
 
 	/**
-	 * unique function name for compiled template code
+	 * unique function name for compiled templates code
 	 *
 	 * @var string
 	 */
 	public $unifunc = '';
 
 	/**
-	 * flag if template does contain nocache code sections
+	 * flag if templates does contain nocache code sections
 	 *
 	 * @var bool
 	 */
@@ -96,9 +96,9 @@ abstract class GeneratedPhpFile {
 	}
 
 	/**
-	 * get rendered template content by calling compiled or cached template code
+	 * get rendered templates content by calling compiled or cached templates code
 	 *
-	 * @param string $unifunc function with template code
+	 * @param string $unifunc function with templates code
 	 *
 	 * @throws \Exception
 	 */
@@ -106,7 +106,7 @@ abstract class GeneratedPhpFile {
 		$level = ob_get_level();
 		try {
 			if (empty($unifunc) || !function_exists($unifunc)) {
-				throw new \Smarty\Exception("Invalid compiled template for '{$this->filepath}'");
+				throw new \Smarty\Exception("Invalid compiled templates for '{$this->filepath}'");
 			}
 			$unifunc($_template);
 		} catch (\Exception $e) {
@@ -133,7 +133,7 @@ abstract class GeneratedPhpFile {
 
 			if ($handler instanceof FilePlugin) {
 				if ($_template->getSource()->getResourceName() === $_file_to_check[0]) {
-					// do not recheck current template
+					// do not recheck current templates
 					continue;
 				}
 				$mtime = $handler->getResourceNameTimestamp($_file_to_check[0], $_template->getSmarty(), $_template->getSource()->isConfig);
@@ -141,7 +141,7 @@ abstract class GeneratedPhpFile {
 
 				if ($handler->checkTimestamps()) {
 					// @TODO this doesn't actually check any dependencies, but only the main source file
-					// and that might to be irrelevant, as the comment "do not recheck current template" above suggests
+					// and that might to be irrelevant, as the comment "do not recheck current templates" above suggests
 					$source = Source::load($_template, $_template->getSmarty());
 					$mtime = $source->getTimeStamp();
 				} else {

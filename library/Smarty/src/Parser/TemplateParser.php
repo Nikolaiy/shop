@@ -17,7 +17,7 @@ use \Smarty\CompilerException;
 /**
 * Smarty Template Parser Class
 *
-* This is the template parser.
+* This is the templates parser.
 * It is generated from the TemplateParser.y file
 * 
 * @author Uwe Tews <uwe.tews@googlemail.com>
@@ -111,7 +111,7 @@ class TemplateParser
     public $smarty = null;
 
     /**
-     * template object
+     * templates object
      *
      * @var \Smarty\Template
      */
@@ -132,14 +132,14 @@ class TemplateParser
     public $security = null;
 
     /**
-     * template prefix array
+     * templates prefix array
      *
      * @var \Smarty\ParseTree\Base[]
      */
     public $template_prefix = array();
 
     /**
-     * template prefix array
+     * templates prefix array
      *
      * @var \Smarty\ParseTree\Base[]
      */
@@ -1263,7 +1263,7 @@ public static $yy_action = array(
   'AT',            'HATCH',         'OPENB',         'CLOSEB',      
   'DOLLAR',        'LOGOP',         'SLOGOP',        'TLOGOP',      
   'SINGLECOND',    'ARRAYOPEN',     'QUOTE',         'BACKTICK',    
-  'error',         'start',         'template',      'literal_e2',  
+  'error',         'start',         'templates',      'literal_e2',
   'literal_e1',    'smartytag',     'tagbody',       'tag',         
   'outattr',       'eqoutattr',     'varindexed',    'output',      
   'attributes',    'variablevalue',  'value',         'expr',        
@@ -1279,17 +1279,17 @@ public static $yy_action = array(
     );
 
     public static $yyRuleName = array(
-  'start ::= template',
-  'template ::= template TEXT',
-  'template ::= template STRIPON',
-  'template ::= template STRIPOFF',
-  'template ::= template LITERALSTART literal_e2 LITERALEND',
+  'start ::= templates',
+  'templates ::= templates TEXT',
+  'templates ::= templates STRIPON',
+  'templates ::= templates STRIPOFF',
+  'templates ::= templates LITERALSTART literal_e2 LITERALEND',
   'literal_e2 ::= literal_e1 LITERALSTART literal_e1 LITERALEND',
   'literal_e2 ::= literal_e1',
   'literal_e1 ::= literal_e1 LITERAL',
   'literal_e1 ::=',
-  'template ::= template smartytag',
-  'template ::=',
+  'templates ::= templates smartytag',
+  'templates ::=',
   'smartytag ::= SIMPELOUTPUT',
   'smartytag ::= SIMPLETAG',
   'smartytag ::= SMARTYBLOCKCHILDPARENT',
@@ -1771,7 +1771,7 @@ public static $yy_action = array(
 // line 232 "src/Parser/TemplateParser.y"
 
     $this->internalError = true;
-    $this->compiler->trigger_template_error('Stack overflow in template parser');
+    $this->compiler->trigger_template_error('Stack overflow in templates parser');
 
             return;
         }

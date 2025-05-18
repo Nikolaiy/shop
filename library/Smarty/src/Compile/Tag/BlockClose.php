@@ -40,7 +40,7 @@ class BlockClose extends Inheritance {
 
 		// get compiled block code
 		$_functionCode = $compiler->getParser()->current_buffer;
-		// setup buffer for template function code
+		// setup buffer for templates function code
 		$compiler->getParser()->current_buffer = new Template();
 		$output = "<?php\n";
 		$output .= $compiler->cStyleComment(" {block {$_name}} ") . "\n";

@@ -27,7 +27,7 @@ class File extends Base
      * populate Cached Object with metadata from Resource
      *
      * @param Cached   $cached    cached object
-     * @param Template $_template template object
+     * @param Template $_template templates object
      *
      * @return void
      */
@@ -89,9 +89,9 @@ class File extends Base
     }
 
 	/**
-	 * Read the cached template and process its header
+	 * Read the cached templates and process its header
 	 *
-	 * @param Template $_smarty_tpl do not change variable name, is used by compiled template
+	 * @param Template $_smarty_tpl do not change variable name, is used by compiled templates
 	 * @param Cached|null $cached cached object
 	 * @param bool $update flag if called because cache update
 	 *
@@ -112,9 +112,9 @@ class File extends Base
     }
 
     /**
-     * Write the rendered template output to cache
+     * Write the rendered templates output to cache
      *
-     * @param Template $_template template object
+     * @param Template $_template templates object
      * @param string                   $content   content to cache
      *
      * @return bool success
@@ -141,9 +141,9 @@ class File extends Base
     }
 
     /**
-     * Read cached template from cache
+     * Read cached templates from cache
      *
-     * @param Template $_template template object
+     * @param Template $_template templates object
      *
      * @return string  content
      */
@@ -169,10 +169,10 @@ class File extends Base
     }
 
     /**
-     * Empty cache for a specific template
+     * Empty cache for a specific templates
      *
      * @param Smarty  $smarty
-     * @param string  $resource_name template name
+     * @param string  $resource_name templates name
      * @param string  $cache_id      cache id
      * @param string  $compile_id    compile id
      * @param integer $exp_time      expiration time (number of seconds, not timestamp)
@@ -204,7 +204,7 @@ class File extends Base
 		    $smarty->caching = \Smarty\Smarty::CACHING_LIFETIME_CURRENT;
 		    $tpl = $smarty->doCreateTemplate($resource_name);
 		    $smarty->caching = $_save_stat;
-		    // remove from template cache
+		    // remove from templates cache
 		    if ($tpl->getSource()->exists) {
 			    $_resourcename_parts = basename(str_replace('^', '/', $tpl->getCached()->filepath));
 		    } else {
@@ -290,7 +290,7 @@ class File extends Base
     }
 
     /**
-     * Check is cache is locked for this template
+     * Check is cache is locked for this templates
      *
      * @param Smarty                 $smarty Smarty object
      * @param Cached $cached cached object
@@ -309,7 +309,7 @@ class File extends Base
     }
 
     /**
-     * Lock cache for this template
+     * Lock cache for this templates
      *
      * @param Smarty                 $smarty Smarty object
      * @param Cached $cached cached object
@@ -323,7 +323,7 @@ class File extends Base
     }
 
     /**
-     * Unlock cache for this template
+     * Unlock cache for this templates
      *
      * @param Smarty                 $smarty Smarty object
      * @param Cached $cached cached object

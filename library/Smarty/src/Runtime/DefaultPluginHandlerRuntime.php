@@ -31,7 +31,7 @@ class DefaultPluginHandlerRuntime {
 				[
 					$tag,
 					$plugin_type,
-					null, // This used to pass $this->template, but this parameter has been removed in 5.0
+					null, // This used to pass $this->templates, but this parameter has been removed in 5.0
 					&$callback,
 					&$script,
 					&$cacheable,
@@ -59,7 +59,7 @@ class DefaultPluginHandlerRuntime {
 				[
 					$tag,
 					$plugin_type,
-					null, // This used to pass $this->template, but this parameter has been removed in 5.0
+					null, // This used to pass $this->templates, but this parameter has been removed in 5.0
 					&$callback,
 					&$script,
 					&$cacheable,

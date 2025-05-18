@@ -32,7 +32,7 @@ use Smarty\Template;
  * @version 1.0
  *
  * @param array                    $params   parameters
- * @param Template $template template object
+ * @param Template $templates templates object
  *
  * @return string
  * @uses    smarty_function_escape_special_chars()

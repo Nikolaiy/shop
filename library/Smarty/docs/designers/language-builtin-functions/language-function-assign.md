@@ -119,13 +119,13 @@ execution as in the following script.
 ```php
 <?php
 
-// this will output nothing as the template has not been executed
+// this will output nothing as the templates has not been executed
 echo $smarty->getTemplateVars('foo');
 
-// fetch the template to a variable
+// fetch the templates to a variable
 $whole_page = $smarty->fetch('index.tpl');
 
-// this will output 'smarty' as the template has been executed
+// this will output 'smarty' as the templates has been executed
 echo $smarty->getTemplateVars('foo');
 
 $smarty->assign('foo','Even smarter');

@@ -31,7 +31,7 @@ $smarty->setTemplateDir('./templates')
        ->addTemplateDir('./templates_1')
        ->addTemplateDir('./templates_2');
 
-// insert a template dir before exising template dirs
+// insert a templates dir before exising templates dirs
 $smarty->prependTemplateDir('./more_important_templates')
 
 // get all directories where config files are stored

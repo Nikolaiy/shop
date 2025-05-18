@@ -8,7 +8,7 @@ use Smarty\Template\Cacheresource\Base;
 use Smarty\Template\Compiler\CodeFrame;
 
 /**
- * Represents a cached version of a template or config file.
+ * Represents a cached version of a templates or config file.
  * @author     Rodney Rehm
  */
 class Cached extends GeneratedPhpFile {
@@ -99,7 +99,7 @@ class Cached extends GeneratedPhpFile {
 	}
 
 	/**
-	 * Render cache template
+	 * Render cache templates
 	 *
 	 * @param \Smarty\Template $_template
 	 * @param bool $no_output_filter
@@ -207,9 +207,9 @@ class Cached extends GeneratedPhpFile {
 	}
 
 	/**
-	 * Process cached template
+	 * Process cached templates
 	 *
-	 * @param Template $_template template object
+	 * @param Template $_template templates object
 	 */
 	private function process(Template $_template) {
 		if ($this->handler->process($_template, $this) === false) {
@@ -221,7 +221,7 @@ class Cached extends GeneratedPhpFile {
 	/**
 	 * Read cache content from handler
 	 *
-	 * @param Template $_template template object
+	 * @param Template $_template templates object
 	 *
 	 * @return string|false content
 	 */
@@ -320,7 +320,7 @@ class Cached extends GeneratedPhpFile {
 		// loop over items, stitch back together
 		foreach ($cache_split as $curr_idx => $curr_split) {
 			if (preg_match($php_pattern, $curr_split)) {
-				// escape PHP tags in template content
+				// escape PHP tags in templates content
 				$php_split = preg_split(
 					$php_pattern,
 					$curr_split
@@ -389,7 +389,7 @@ class Cached extends GeneratedPhpFile {
 	 * - Check if file is valid
 	 *
 	 * @param Template $_template
-	 * @param array $properties special template properties
+	 * @param array $properties special templates properties
 	 *
 	 * @return bool flag if compiled or cache file is valid
 	 * @throws Exception

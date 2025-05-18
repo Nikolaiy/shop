@@ -10,7 +10,7 @@ use Smarty\Template;
  * Purpose:  print out a counter value
  *
  * @param array                    $params   parameters
- * @param Template $template template object
+ * @param Template $templates templates object
  *
  * @return string|null
  *

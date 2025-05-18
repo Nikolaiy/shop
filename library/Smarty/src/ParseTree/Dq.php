@@ -73,7 +73,7 @@ class Dq extends Base
      *
      * @param \Smarty\Parser\TemplateParser $parser
      *
-     * @return string compiled template code
+     * @return string compiled templates code
      */
     public function to_smarty_php(\Smarty\Parser\TemplateParser $parser)
     {

@@ -29,11 +29,11 @@ $data->assign('bar','bar-data');
 $data2 = $smarty->createData($data);
 $data2->assign('bar','bar-data2');
 
-// assign variable to template object scope
+// assign variable to templates object scope
 $tpl = $smarty->createTemplate('index.tpl');
-$tpl->assign('bar','bar-template');
+$tpl->assign('bar','bar-templates');
 
-// assign variable to template object scope with link to Smarty object
+// assign variable to templates object scope with link to Smarty object
 $tpl2 = $smarty->createTemplate('index.tpl',$smarty);
 $tpl2->assign('bar','bar-template2');
 
@@ -47,10 +47,10 @@ $smarty->display('index.tpl',$data);
 // and $bar='bar-data2' from the data object $data2
 $smarty->display('index.tpl',$data2);
 
-// This display() does see $bar='bar-template' from the template object $tpl
+// This display() does see $bar='bar-templates' from the templates object $tpl
 $tpl->display();  // or $smarty->display($tpl);
 
-// This display() does see $bar='bar-template2' from the template object $tpl2
+// This display() does see $bar='bar-template2' from the templates object $tpl2
 // and $foo='smarty' form the Smarty object $foo
 $tpl2->display();  // or $smarty->display($tpl2);
 ```

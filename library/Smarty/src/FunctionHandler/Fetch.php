@@ -13,10 +13,10 @@ use Smarty\Template;
  * @author Monte Ohrt <monte at ohrt dot com>
  *
  * @param array                    $params   parameters
- * @param Template $template template object
+ * @param Template $templates templates object
  *
  * @throws Exception
- * @return string|null if the assign parameter is passed, Smarty assigns the result to a template variable
+ * @return string|null if the assign parameter is passed, Smarty assigns the result to a templates variable
  */
 class Fetch extends Base {
 

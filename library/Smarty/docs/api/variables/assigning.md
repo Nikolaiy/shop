@@ -47,7 +47,7 @@ Examples:
 <?php
 // This is effectively the same as assign()
 $smarty->append('foo', 'Fred');
-// After this line, foo will now be seen as an array in the template
+// After this line, foo will now be seen as an array in the templates
 $smarty->append('foo', 'Albert');
 
 $array = [1 => 'one', 2 => 'two'];
@@ -98,10 +98,10 @@ $data = $smarty->createData();
 // assign variable to the data object
 $data->assign('name', 'Neo');
 
-// create template object which will use variables from the data object
+// create templates object which will use variables from the data object
 $tpl = $smarty->createTemplate('index.tpl', $data);
 
-// display the template
+// display the templates
 $tpl->display();
 ```
 
@@ -123,7 +123,7 @@ $data->assign('name', 'Neo');
 // ...
 $data->clearAllAssign();
 
-// using a template
+// using a templates
 $tplBlue = $smarty->createTemplate('blue.tpl');
 $tplBlue->assign('name', 'The one');
 // ...

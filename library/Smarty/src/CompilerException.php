@@ -51,7 +51,7 @@ class CompilerException extends Exception {
 	}
 
 	/**
-	 * The template source snippet relating to the error
+	 * The templates source snippet relating to the error
 	 *
 	 * @type string|null
 	 */
@@ -65,7 +65,7 @@ class CompilerException extends Exception {
 	public $desc = null;
 
 	/**
-	 * The resource identifier or template name
+	 * The resource identifier or templates name
 	 *
 	 * @type string|null
 	 */

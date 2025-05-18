@@ -13,7 +13,7 @@ namespace Smarty;
 class Variable
 {
     /**
-     * template variable
+     * templates variable
      *
      * @var mixed
      */

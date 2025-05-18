@@ -18,7 +18,7 @@ use Smarty\Template;
  * - print     - boolean - print var or not. default is true
  * - advance   - boolean - whether to advance the cycle
  * - delimiter - the value delimiter, default is ","
- * - assign    - boolean, assigns to template var instead of printed.
+ * - assign    - boolean, assigns to templates var instead of printed.
  *
  * Examples:
  *
@@ -33,7 +33,7 @@ use Smarty\Template;
  * @version 1.3
  *
  * @param array                    $params   parameters
- * @param Template $template template object
+ * @param Template $templates templates object
  *
  * @return string|null
  */

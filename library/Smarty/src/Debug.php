@@ -11,7 +11,7 @@ namespace Smarty;
 class Debug extends Data
 {
     /**
-     * template data
+     * templates data
      *
      * @var array
      */
@@ -39,9 +39,9 @@ class Debug extends Data
     public $offset = 0;
 
     /**
-     * Start logging template
+     * Start logging templates
      *
-     * @param Template $template template
+     * @param Template $template templates
      * @param null                      $mode     true: display   false: fetch  null: subtemplate
      */
     public function start_template(Template $template, $mode = null)
@@ -58,7 +58,7 @@ class Debug extends Data
     /**
      * End logging of cache time
      *
-     * @param Template $template cached template
+     * @param Template $template cached templates
      */
     public function end_template(Template $template)
     {
@@ -134,7 +134,7 @@ class Debug extends Data
     /**
      * Start logging of cache time
      *
-     * @param Template $template cached template
+     * @param Template $template cached templates
      */
     public function start_cache(Template $template)
     {
@@ -145,7 +145,7 @@ class Debug extends Data
     /**
      * End logging of cache time
      *
-     * @param Template $template cached template
+     * @param Template $template cached templates
      */
     public function end_cache(Template $template)
     {
@@ -155,9 +155,9 @@ class Debug extends Data
     }
 
     /**
-     * Register template object
+     * Register templates object
      *
-     * @param Template $template cached template
+     * @param Template $template cached templates
      */
     public function register_template(Template $template)
     {
@@ -236,7 +236,7 @@ class Debug extends Data
     }
 
     /**
-     * Recursively gets variables from all template/data scopes
+     * Recursively gets variables from all templates/data scopes
      *
      * @param \Smarty\Data $obj object to debug
      *
@@ -287,9 +287,9 @@ class Debug extends Data
     }
 
     /**
-     * Return key into $template_data for template
+     * Return key into $template_data for templates
      *
-     * @param Template $template template object
+     * @param Template $template templates object
      *
      * @return string key into $template_data
      */
@@ -308,7 +308,7 @@ class Debug extends Data
     }
 
     /**
-     * Ignore template
+     * Ignore templates
      *
      * @param Template $template
      */

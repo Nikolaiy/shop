@@ -69,10 +69,10 @@ class ExtendsTag extends Inheritance {
 	}
 
 	/**
-	 * Add code for inheritance endChild() method to end of template
+	 * Add code for inheritance endChild() method to end of templates
 	 *
 	 * @param \Smarty\Compiler\Template $compiler
-	 * @param null|string $template optional inheritance parent template
+	 * @param null|string $template optional inheritance parent templates
 	 *
 	 * @throws \Smarty\CompilerException
 	 * @throws \Smarty\Exception

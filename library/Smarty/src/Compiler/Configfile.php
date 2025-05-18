@@ -119,7 +119,7 @@ class Configfile extends BaseCompiler {
 		if ($this->smarty->debugging) {
 			$this->smarty->getDebug()->end_compile($this->template);
 		}
-		// template header code
+		// templates header code
 		$template_header = sprintf(
 			"<?php /* Smarty version %s, created on %s\n         compiled from '%s' */ ?>\n",
 			\Smarty\Smarty::SMARTY_VERSION,

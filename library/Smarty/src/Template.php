@@ -1,7 +1,7 @@
 <?php
 /**
  * Smarty Internal Plugin Template
- * This file contains the Smarty template engine
+ * This file contains the Smarty templates engine
  *
 
 
@@ -18,7 +18,7 @@ use Smarty\Template\Compiled;
 use Smarty\Template\Config;
 
 /**
- * Main class with template data structures and methods
+ * Main class with templates data structures and methods
  */
 #[\AllowDynamicProperties]
 class Template extends TemplateBase {
@@ -65,14 +65,14 @@ class Template extends TemplateBase {
 	public $templateId = null;
 
 	/**
-	 * Callbacks called before rendering template
+	 * Callbacks called before rendering templates
 	 *
 	 * @var callback[]
 	 */
 	public $startRenderCallbacks = [];
 
 	/**
-	 * Callbacks called after rendering template
+	 * Callbacks called after rendering templates
 	 *
 	 * @var callback[]
 	 */
@@ -98,11 +98,11 @@ class Template extends TemplateBase {
 	private $inheritance;
 
 	/**
-	 * Create template data object
-	 * Some of the global Smarty settings copied to template scope
-	 * It load the required template resources and caching plugins
+	 * Create templates data object
+	 * Some of the global Smarty settings copied to templates scope
+	 * It load the required templates resources and caching plugins
 	 *
-	 * @param string $template_resource template resource string
+	 * @param string $template_resource templates resource string
 	 * @param Smarty $smarty Smarty instance
 	 * @param \Smarty\Data|null $_parent back pointer to parent object with variables or null
 	 * @param mixed $_cache_id cache   id or null
@@ -141,10 +141,10 @@ class Template extends TemplateBase {
 	}
 
 	/**
-	 * render template
+	 * render templates
 	 *
 	 * @param bool $no_output_filter if true do not run output filter
-	 * @param null|bool $display true: display, false: fetch null: sub-template
+	 * @param null|bool $display true: display, false: fetch null: sub-templates
 	 *
 	 * @return string
 	 * @throws \Exception
@@ -154,7 +154,7 @@ class Template extends TemplateBase {
 		if ($this->smarty->debugging) {
 			$this->smarty->getDebug()->start_template($this, $display);
 		}
-		// checks if template exists
+		// checks if templates exists
 		if ($this->compile_check && !$this->getSource()->exists) {
 			throw new Exception(
 				"Unable to load '{$this->getSource()->type}:{$this->getSource()->name}'" .
@@ -229,14 +229,14 @@ class Template extends TemplateBase {
 	}
 
 	/**
-	 * Runtime function to render sub-template
+	 * Runtime function to render sub-templates
 	 *
-	 * @param string $template_name template name
+	 * @param string $template_name templates name
 	 * @param mixed $cache_id cache id
 	 * @param mixed $compile_id compile id
 	 * @param integer $caching cache mode
 	 * @param integer $cache_lifetime lifetime of cache data
-	 * @param array $extra_vars passed parameter template variables
+	 * @param array $extra_vars passed parameter templates variables
 	 * @param int|null $scope
 	 *
 	 * @throws Exception
@@ -254,7 +254,7 @@ class Template extends TemplateBase {
 
 		$name = $this->parseResourceName($template_name);
 		if ($currentDir && preg_match('/^\.{1,2}\//', $name)) {
-			// relative template resource name, append it to current template name
+			// relative templates resource name, append it to current templates name
 			$template_name = $currentDir . DIRECTORY_SEPARATOR . $name;
 		}
 
@@ -289,7 +289,7 @@ class Template extends TemplateBase {
 
 	/**
 	 * Remove type indicator from resource name if present.
-	 * E.g. $this->parseResourceName('file:template.tpl') returns 'template.tpl'
+	 * E.g. $this->parseResourceName('file:templates.tpl') returns 'templates.tpl'
 	 *
 	 * @note "C:/foo.tpl" was forced to file resource up till Smarty 3.1.3 (including).
 	 *
@@ -305,9 +305,9 @@ class Template extends TemplateBase {
 	}
 
 	/**
-	 * Check if this is a sub template
+	 * Check if this is a sub templates
 	 *
-	 * @return bool true is sub template
+	 * @return bool true is sub templates
 	 */
 	public function _isSubTpl() {
 		return isset($this->parent) && $this->parent instanceof Template;
@@ -318,8 +318,8 @@ class Template extends TemplateBase {
 	}
 
 	/**
-	 * Compiles the template
-	 * If the template is not evaluated the compiled template is saved on disk
+	 * Compiles the templates
+	 * If the templates is not evaluated the compiled templates is saved on disk
 	 *
 	 * @TODO only used in compileAll and 1 unit test: can we move this and make compileAndWrite private?
 	 *
@@ -359,7 +359,7 @@ class Template extends TemplateBase {
 	}
 
 	/**
-	 * Get unique template id
+	 * Get unique templates id
 	 *
 	 * @return string
 	 */
@@ -454,8 +454,8 @@ class Template extends TemplateBase {
 	/**
 	 * Create code frame for compiled and cached templates
 	 *
-	 * @param string $content optional template content
-	 * @param string $functions compiled template function and block code
+	 * @param string $content optional templates content
+	 * @param string $functions compiled templates function and block code
 	 * @param bool $cache flag for cache file
 	 * @param Compiler\Template|null $compiler
 	 *
@@ -476,8 +476,8 @@ class Template extends TemplateBase {
 	}
 
 	/**
-	 * Returns if the current template must be compiled by the Smarty compiler
-	 * It does compare the timestamps of template source and the compiled templates and checks the force compile
+	 * Returns if the current templates must be compiled by the Smarty compiler
+	 * It does compare the timestamps of templates source and the compiled templates and checks the force compile
 	 * configuration
 	 *
 	 * @return bool
@@ -597,8 +597,8 @@ class Template extends TemplateBase {
 	/**
 	 * test if cache is valid
 	 *
-	 * @param mixed $cache_id cache id to be used with this template
-	 * @param mixed $compile_id compile id to be used with this template
+	 * @param mixed $cache_id cache id to be used with this templates
+	 * @param mixed $compile_id compile id to be used with this templates
 	 * @param object $parent next higher level of Smarty variables
 	 *
 	 * @return bool cache status
@@ -612,7 +612,7 @@ class Template extends TemplateBase {
 	}
 
 	/**
-	 * fetches a rendered Smarty template
+	 * fetches a rendered Smarty templates
 	 *
 	 * @param string $function function type 0 = fetch,  1 = display, 2 = isCache
 	 *
@@ -626,7 +626,7 @@ class Template extends TemplateBase {
 
 		// make sure we have integer values
 		$this->caching = (int)$this->caching;
-		// fetch template content
+		// fetch templates content
 		$level = ob_get_level();
 		try {
 			$_smarty_old_error_level =
@@ -639,14 +639,14 @@ class Template extends TemplateBase {
 
 			if ($function === 2) {
 				if ($this->caching) {
-					// return cache status of template
+					// return cache status of templates
 					$result = $this->getCached()->isCached($this);
 				} else {
 					return false;
 				}
 			} else {
 
-				// After rendering a template, the tpl/config variables are reset, so the template can be re-used.
+				// After rendering a templates, the tpl/config variables are reset, so the templates can be re-used.
 				$this->pushStack();
 
 				// Start output-buffering.
@@ -654,7 +654,7 @@ class Template extends TemplateBase {
 
 				$result = $this->render(false, $function);
 
-				// Restore the template to its previous state
+				// Restore the templates to its previous state
 				$this->popStack();
 			}
 

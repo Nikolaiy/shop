@@ -66,7 +66,7 @@ class Template extends BaseCompiler {
 	public $suppressNocacheProcessing = false;
 
 	/**
-	 * caching enabled (copied from template object)
+	 * caching enabled (copied from templates object)
 	 *
 	 * @var int
 	 */
@@ -87,21 +87,21 @@ class Template extends BaseCompiler {
 	private $_tag_stack_count = [];
 
 	/**
-	 * current template
+	 * current templates
 	 *
 	 * @var \Smarty\Template
 	 */
 	private $template = null;
 
 	/**
-	 * merged included sub template data
+	 * merged included sub templates data
 	 *
 	 * @var array
 	 */
 	public $mergedSubTemplatesData = [];
 
 	/**
-	 * merged sub template code
+	 * merged sub templates code
 	 *
 	 * @var array
 	 */
@@ -136,7 +136,7 @@ class Template extends BaseCompiler {
 	public $tpl_function = [];
 
 	/**
-	 * compiled template or block function code
+	 * compiled templates or block function code
 	 *
 	 * @var string
 	 */
@@ -150,7 +150,7 @@ class Template extends BaseCompiler {
 	public $modifier_plugins = [];
 
 	/**
-	 * parent compiler object for merged subtemplates and template functions
+	 * parent compiler object for merged subtemplates and templates functions
 	 *
 	 * @var \Smarty\Compiler\Template
 	 */
@@ -255,7 +255,7 @@ class Template extends BaseCompiler {
 	private $literalPreg = '';
 
 	/**
-	 * array of callbacks called when the normal compile process of template is finished
+	 * array of callbacks called when the normal compile process of templates is finished
 	 *
 	 * @var array
 	 */
@@ -347,9 +347,9 @@ class Template extends BaseCompiler {
 	}
 
 	/**
-	 * Method to compile a Smarty template
+	 * Method to compile a Smarty templates
 	 *
-	 * @param \Smarty\Template $template template object to compile
+	 * @param \Smarty\Template $template templates object to compile
 	 *
 	 * @return string code
 	 * @throws Exception
@@ -365,7 +365,7 @@ class Template extends BaseCompiler {
 	}
 
 	/**
-	 * Compile template source and run optional post filter
+	 * Compile templates source and run optional post filter
 	 *
 	 * @param \Smarty\Template $template
 	 * @param Template|null $parent_compiler
@@ -376,7 +376,7 @@ class Template extends BaseCompiler {
 	 */
 	public function compileTemplateSource(\Smarty\Template $template, ?\Smarty\Compiler\Template $parent_compiler = null) {
 		try {
-			// save template object in compiler class
+			// save templates object in compiler class
 			$this->template = $template;
 			if ($this->smarty->debugging) {
 				$this->smarty->getDebug()->start_compile($this->template);
@@ -407,7 +407,7 @@ class Template extends BaseCompiler {
 						$this->template->getSource()->type,
 					];
 			}
-			// get template source
+			// get templates source
 			if (!empty($this->template->getSource()->components)) {
 
 				$_compiled_code = '<?php $_smarty_tpl->getInheritance()->init($_smarty_tpl, true); ?>';
@@ -429,7 +429,7 @@ class Template extends BaseCompiler {
 				}
 				$_compiled_code = $this->smarty->runPostFilters($_compiled_code, $this->template);
 			} else {
-				// get template source
+				// get templates source
 				$_content = $this->template->getSource()->getContent();
 				$_compiled_code = $this->smarty->runPostFilters(
 					$this->doCompile(
@@ -669,7 +669,7 @@ class Template extends BaseCompiler {
 			[
 				$tag,
 				$plugin_type,
-				null, // This used to pass $this->template, but this parameter has been removed in 5.0
+				null, // This used to pass $this->templates, but this parameter has been removed in 5.0
 				&$callback,
 				&$script,
 				&$cacheable,
@@ -713,18 +713,18 @@ class Template extends BaseCompiler {
 	}
 
 	/**
-	 * Inject inline code for nocache template sections
-	 * This method gets the content of each template element from the parser.
+	 * Inject inline code for nocache templates sections
+	 * This method gets the content of each templates element from the parser.
 	 * If the content is compiled code, and it should be not be cached the code is injected
 	 * into the rendered output.
 	 *
-	 * @param string $content content of template element
+	 * @param string $content content of templates element
 	 *
 	 * @return string  content
 	 */
 	public function processNocacheCode($content) {
 
-		// If the template is not evaluated, and we have a nocache section and/or a nocache tag
+		// If the templates is not evaluated, and we have a nocache section and/or a nocache tag
 		// generate replacement code
 		if (!empty($content)
 			&& !($this->template->getSource()->handler->recompiled)
@@ -803,7 +803,7 @@ class Template extends BaseCompiler {
 			// get line number of Tag
 			$line = $lex->taglineno;
 		} elseif (!isset($line)) {
-			// get template source line which has error
+			// get templates source line which has error
 			$line = $lex->line;
 		} else {
 			$line = (int)$line;
@@ -831,7 +831,7 @@ class Template extends BaseCompiler {
 		//        $line += $this->trace_line_offset;
 		$match = preg_split("/\n/", $lex->data);
 		$error_text =
-			'Syntax error in template "' . (empty($this->trace_filepath) ? $templateName : $this->trace_filepath) .
+			'Syntax error in templates "' . (empty($this->trace_filepath) ? $templateName : $this->trace_filepath) .
 			'"  on line ' . ($line + $this->trace_line_offset) . ' "' .
 			trim(preg_replace('![\t\r\n]+!', ' ', $match[$line - 1])) . '" ';
 		if (isset($args)) {
@@ -1225,9 +1225,9 @@ class Template extends BaseCompiler {
 	}
 
 	/**
-	 * method to compile a Smarty template
+	 * method to compile a Smarty templates
 	 *
-	 * @param mixed $_content template source
+	 * @param mixed $_content templates source
 	 * @param bool $isTemplateSource
 	 *
 	 * @return bool true if compiling succeeded, false if it failed
@@ -1237,7 +1237,7 @@ class Template extends BaseCompiler {
 		/* here is where the compiling takes place. Smarty
 		  tags in the templates are replaces with PHP code,
 		  then written to compiled files. */
-		// init the lexer/parser to compile the template
+		// init the lexer/parser to compile the templates
 		$this->parser = new TemplateParser(
 				new TemplateLexer(
 					str_replace(
@@ -1291,7 +1291,7 @@ class Template extends BaseCompiler {
 
 	/**
 	 * Register a post compile callback
-	 * - when the callback is called after template compiling the compiler object will be inserted as first parameter
+	 * - when the callback is called after templates compiling the compiler object will be inserted as first parameter
 	 *
 	 * @param callback $callback
 	 * @param array $parameter optional parameter array

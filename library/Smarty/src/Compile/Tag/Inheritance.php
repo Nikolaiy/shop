@@ -25,7 +25,7 @@ abstract class Inheritance extends Base
      * Compile inheritance initialization code as prefix
      *
      * @param \Smarty\Compiler\Template $compiler
-     * @param bool|false                            $initChildSequence if true force child template
+     * @param bool|false                            $initChildSequence if true force child templates
      */
     public static function postCompile(\Smarty\Compiler\Template $compiler, $initChildSequence = false)
     {
@@ -37,7 +37,7 @@ abstract class Inheritance extends Base
      * Register post compile callback to compile inheritance initialization code
      *
      * @param \Smarty\Compiler\Template $compiler
-     * @param bool|false                            $initChildSequence if true force child template
+     * @param bool|false                            $initChildSequence if true force child templates
      */
     public function registerInit(\Smarty\Compiler\Template $compiler, $initChildSequence = false)
     {

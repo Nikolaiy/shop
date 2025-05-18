@@ -99,7 +99,7 @@ abstract class ForeachSection extends Base {
 		$this->propertyPreg .= ')\W~i';
 		// Template source
 		$this->matchTemplateSource($compiler);
-		// Parent template source
+		// Parent templates source
 		$this->matchParentTemplateSource($compiler);
 	}
 
@@ -149,7 +149,7 @@ abstract class ForeachSection extends Base {
 	}
 
 	/**
-	 * Find matches in template source
+	 * Find matches in templates source
 	 *
 	 * @param \Smarty\Compiler\Template $compiler
 	 */
@@ -158,19 +158,19 @@ abstract class ForeachSection extends Base {
 	}
 
 	/**
-	 * Find matches in all parent template source
+	 * Find matches in all parent templates source
 	 *
 	 * @param \Smarty\Compiler\Template $compiler
 	 *
 	 * @throws \Smarty\Exception
 	 */
 	private function matchParentTemplateSource(\Smarty\Compiler\Template $compiler) {
-		// search parent compiler template source
+		// search parent compiler templates source
 		$nextCompiler = $compiler;
 		while ($nextCompiler !== $nextCompiler->getParentCompiler()) {
 			$nextCompiler = $nextCompiler->getParentCompiler();
 			if ($compiler !== $nextCompiler) {
-				// get template source
+				// get templates source
 				$_content = $nextCompiler->getTemplate()->getSource()->getContent();
 				if ($_content !== '') {
 					// run pre filter if required

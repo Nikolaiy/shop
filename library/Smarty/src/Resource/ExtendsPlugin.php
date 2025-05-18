@@ -8,7 +8,7 @@ use Smarty\Template\Source;
 
 /**
  * Smarty Internal Plugin Resource Extends
- * Implements the file system as resource for Smarty which {extend}s a chain of template files templates
+ * Implements the file system as resource for Smarty which {extend}s a chain of templates files templates
  * @author     Uwe Tews
  * @author     Rodney Rehm
  */
@@ -19,7 +19,7 @@ class ExtendsPlugin extends BasePlugin
      * populate Source Object with metadata from Resource
      *
      * @param Source $source source object
-     * @param Template|null $_template template object
+     * @param Template|null $_template templates object
      *
      * @throws Exception
      */
@@ -62,11 +62,11 @@ class ExtendsPlugin extends BasePlugin
     }
 
     /**
-     * Load template's source from files into current template object
+     * Load templates's source from files into current templates object
      *
      * @param Source $source source object
      *
-     * @return string template source
+     * @return string templates source
      * @throws \Smarty\Exception if source cannot be loaded
      */
     public function getContent(Source $source)

@@ -6,7 +6,7 @@ use Smarty\Exception;
 use Smarty\Template;
 
 /**
- * Represents a compiled version of a template or config file.
+ * Represents a compiled version of a templates or config file.
  * @author     Rodney Rehm
  */
 class Compiled extends GeneratedPhpFile {
@@ -34,7 +34,7 @@ class Compiled extends GeneratedPhpFile {
 	/**
 	 * get a Compiled Object of this source
 	 *
-	 * @param Template $_template template object
+	 * @param Template $_template templates object
 	 *
 	 * @return Compiled compiled object
 	 */
@@ -49,7 +49,7 @@ class Compiled extends GeneratedPhpFile {
 	/**
 	 * populate Compiled Object with compiled filepath
 	 *
-	 * @param Template $_template template object
+	 * @param Template $_template templates object
 	 **/
 	private function populateCompiledFilepath(Template $_template) {
 		$source = $_template->getSource();
@@ -85,7 +85,7 @@ class Compiled extends GeneratedPhpFile {
 	}
 
 	/**
-	 * render compiled template code
+	 * render compiled templates code
 	 *
 	 * @param Template $_template
 	 *
@@ -120,9 +120,9 @@ class Compiled extends GeneratedPhpFile {
 	}
 
 	/**
-	 * load compiled template or compile from source
+	 * load compiled templates or compile from source
 	 *
-	 * @param Template $_smarty_tpl do not change variable name, is used by compiled template
+	 * @param Template $_smarty_tpl do not change variable name, is used by compiled templates
 	 *
 	 * @throws Exception
 	 */
@@ -148,9 +148,9 @@ class Compiled extends GeneratedPhpFile {
 	}
 
 	/**
-	 * compile template from source
+	 * compile templates from source
 	 *
-	 * @param Template $_smarty_tpl do not change variable name, is used by compiled template
+	 * @param Template $_smarty_tpl do not change variable name, is used by compiled templates
 	 *
 	 * @throws Exception
 	 */
@@ -172,7 +172,7 @@ class Compiled extends GeneratedPhpFile {
 	}
 
 	/**
-	 * compile template from source
+	 * compile templates from source
 	 *
 	 * @param Template $_template
 	 *
@@ -216,7 +216,7 @@ class Compiled extends GeneratedPhpFile {
 	/**
 	 * Write compiled code by handler
 	 *
-	 * @param Template $_template template object
+	 * @param Template $_template templates object
 	 * @param string $code compiled code
 	 *
 	 * @return bool success
@@ -237,10 +237,10 @@ class Compiled extends GeneratedPhpFile {
 	}
 
 	/**
-	 * Load fresh compiled template by including the PHP file
+	 * Load fresh compiled templates by including the PHP file
 	 * HHVM requires a workaround because of a PHP incompatibility
 	 *
-	 * @param Template $_smarty_tpl do not change/remove variable name, is used by compiled template
+	 * @param Template $_smarty_tpl do not change/remove variable name, is used by compiled templates
 	 * @param bool $invalidateCachedFiles forces a revalidation of the file in opcache or apc cache (if available)
 	 *
 	 */
@@ -264,12 +264,12 @@ class Compiled extends GeneratedPhpFile {
 	}
 
 	/**
-	 * This function is executed automatically when a compiled or cached template file is included
-	 * - Decode saved properties from compiled template and cache files
+	 * This function is executed automatically when a compiled or cached templates file is included
+	 * - Decode saved properties from compiled templates and cache files
 	 * - Check if compiled or cache file is valid
 	 *
 	 * @param Template $_template
-	 * @param array $properties special template properties
+	 * @param array $properties special templates properties
 	 *
 	 * @return bool flag if compiled or cache file is valid
 	 * @throws Exception

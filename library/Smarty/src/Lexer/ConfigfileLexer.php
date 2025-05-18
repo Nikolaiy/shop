@@ -124,7 +124,7 @@ class ConfigfileLexer
     /**
      * constructor
      *
-     * @param   string                             $data template source
+     * @param   string                             $data templates source
      * @param \Smarty\Compiler\Configfile $compiler
      */
     public function __construct($data, \Smarty\Compiler\Configfile $compiler)

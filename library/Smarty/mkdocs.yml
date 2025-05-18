@@ -145,7 +145,7 @@ nav:
       - 'Template resources': 'api/resources.md'
       - 'Caching':
         - 'Basics': 'api/caching/basics.md'
-        - 'Multiple caches per template': 'api/caching/multiple-caches-per-template.md'
+        - 'Multiple caches per template': 'api/caching/multiple-caches-per-templates.md'
         - 'Custom cache storage layers': 'api/caching/custom-storage-layers.md'
       - 'Extending Smarty':
           - 'Introduction': 'api/extending/introduction.md'

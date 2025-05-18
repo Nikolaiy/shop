@@ -28,7 +28,7 @@ class FilePlugin extends BasePlugin {
 	 * populate Source Object with metadata from Resource
 	 *
 	 * @param Source $source source object
-	 * @param Template|null $_template template object
+	 * @param Template|null $_template templates object
 	 *
 	 * @throws Exception
 	 */
@@ -68,11 +68,11 @@ class FilePlugin extends BasePlugin {
 	}
 
 	/**
-	 * Load template's source from file into current template object
+	 * Load templates's source from file into current templates object
 	 *
 	 * @param Source $source source object
 	 *
-	 * @return string                 template source
+	 * @return string                 templates source
 	 * @throws Exception        if source cannot be loaded
 	 */
 	public function getContent(Source $source) {
@@ -80,7 +80,7 @@ class FilePlugin extends BasePlugin {
 			return file_get_contents($this->getFilePath($source->getResourceName(), $source->getSmarty(), $source->isConfig()));
 		}
 		throw new Exception(
-			'Unable to read ' . ($source->isConfig ? 'config' : 'template') .
+			'Unable to read ' . ($source->isConfig ? 'config' : 'templates') .
 			" {$source->type} '{$source->name}'"
 		);
 	}
@@ -97,7 +97,7 @@ class FilePlugin extends BasePlugin {
 	}
 
 	/**
-	 * build template filepath by traversing the template_dir array
+	 * build templates filepath by traversing the template_dir array
 	 *
 	 * @param $file
 	 * @param Smarty $smarty

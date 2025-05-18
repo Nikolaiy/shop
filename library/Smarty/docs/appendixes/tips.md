@@ -228,7 +228,7 @@ function smarty_function_load_ticker($params, $smarty)
    // call the function
    $ticker_info = fetch_ticker($params['symbol']);
 
-   // assign template variable
+   // assign templates variable
    $smarty->assign($params['assign'], $ticker_info);
 }
 

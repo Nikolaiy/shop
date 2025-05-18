@@ -8,12 +8,12 @@ use Smarty\Template;
  * Smarty {math} function plugin
  * Type:     function
  * Name:     math
- * Purpose:  handle math computations in template
+ * Purpose:  handle math computations in templates
  *
  * @author Monte Ohrt <monte at ohrt dot com>
  *
  * @param array                    $params   parameters
- * @param Template $template template object
+ * @param Template $templates templates object
  *
  * @return string|null
  */

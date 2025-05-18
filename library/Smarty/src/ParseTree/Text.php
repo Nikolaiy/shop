@@ -4,14 +4,14 @@ namespace Smarty\ParseTree;
 
 /**
  * Smarty Internal Plugin Templateparser Parse Tree
- * These are classes to build parse tree in the template parser
+ * These are classes to build parse tree in the templates parser
  *
 
 
  * @author     Thue Kristensen
  * @author     Uwe Tews
  *             *
- *             template text
+ *             templates text
 
 
  * @ignore
@@ -26,7 +26,7 @@ class Text extends Base
     private $toBeStripped = false;
 
     /**
-     * Create template text buffer
+     * Create templates text buffer
      *
      * @param string $data text
      * @param bool $toBeStripped wether this section should be stripped on output to smarty php

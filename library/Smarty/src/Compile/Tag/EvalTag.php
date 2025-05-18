@@ -60,7 +60,7 @@ class EvalTag extends Base {
 			// output will be stored in a smarty variable instead of being displayed
 			$_assign = $_attr['assign'];
 		}
-		// create template object
+		// create templates object
 		$_output =
 			"\$_template = new \\Smarty\\Template('eval:'.{$_attr[ 'var' ]}, \$_smarty_tpl->getSmarty(), \$_smarty_tpl);";
 		//was there an assign attribute?

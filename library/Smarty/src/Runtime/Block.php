@@ -69,7 +69,7 @@ class Block
 
     /**
      * Block constructor.
-     * - if outer level {block} of child template ($state === 1) save it as child root block
+     * - if outer level {block} of child templates ($state === 1) save it as child root block
      * - otherwise process inheritance and render
      *
      * @param string   $name     block name

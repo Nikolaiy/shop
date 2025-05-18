@@ -1,7 +1,7 @@
 <?php
 /**
  * Smarty Internal Plugin Resource Stream
- * Implements the streams as resource for Smarty template
+ * Implements the streams as resource for Smarty templates
  *
 
 
@@ -17,7 +17,7 @@ use Smarty\Template\Source;
 
 /**
  * Smarty Internal Plugin Resource Stream
- * Implements the streams as resource for Smarty template
+ * Implements the streams as resource for Smarty templates
  *
  * @link       https://php.net/streams
 
@@ -29,7 +29,7 @@ class StreamPlugin extends RecompiledPlugin {
 	 * populate Source Object with meta data from Resource
 	 *
 	 * @param Source $source source object
-	 * @param Template $_template template object
+	 * @param Template $_template templates object
 	 *
 	 * @return void
 	 */
@@ -40,11 +40,11 @@ class StreamPlugin extends RecompiledPlugin {
 	}
 
 	/**
-	 * Load template's source from stream into current template object
+	 * Load templates's source from stream into current templates object
 	 *
 	 * @param Source $source source object
 	 *
-	 * @return string template source
+	 * @return string templates source
 	 */
 	public function getContent(Source $source) {
 
